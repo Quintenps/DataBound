@@ -51,7 +51,7 @@
 <body>
     <div class="ui fixed inverted menu">
         <div class="ui container">
-            <a class="header item" href="#">Simple Data</a> <a class="item"
+            <a class="header item" href="#"><img src="../images/logo.svg" style="width:128px"></a> <a class="item"
             href="#">Home</a> <a class="item" href="#">Messages
             <div class="ui red label">
                 4
