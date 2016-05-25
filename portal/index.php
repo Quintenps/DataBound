@@ -53,13 +53,13 @@
         <div class="ui container">
             <a class="header item" href="#">Simple Data</a> <a class="item"
             href="#">Home</a> <a class="item" href="#">Messages
-            <div class="floating ui red label">
+            <div class="ui red label">
                 4
             </div></a> <a class="item" href="#">Activity</a>
             <div class="right menu">
                 <div class="ui simple dropdown item">
                     <img class="ui avatar image" src=
-                    "https://cnt.bet9ja.com/super9ja/img/login-user-icon.png"><span>Username</span><i class="dropdown icon"></i>
+                    "https://cnt.bet9ja.com/super9ja/img/login-user-icon.png"><span>Quinten Peels</span><i class="dropdown icon"></i>
                     <div class="menu">
                         <div class="header">
                             Profile
@@ -73,27 +73,21 @@
             </div>
         </div>
     </div>
-    <div class="ui main container">
+    <div class="ui main  container">
 
         <div class="ui grid">
-            <div class="two wide column">
+            <div class="four wide column">
                 <div class="ui breadcrumb">
                     <a class="section">Home</a>
                     <div class="divider">
                         /
-                    </div><a class="section">Store</a>
-                    <div class="divider">
-                        /
-                    </div>
-                    <div class="active section">
-                        T-Shirt
-                    </div>
+                    </div><a class="active section">Dashboard</a>
                 </div>
             </div>
         </div>
 
-        <div class="ui grid">
-  <div class="three column row">
+        <div class="ui stackable grid">
+  <div class="four column row">
     <div class="column">
       <div class="ui cube shape">
         <div class="sides">
@@ -133,7 +127,63 @@
         </div>
       </div>
     </div>
+    <div class="column">
+     <div class="ui cube shape">
+        <div class="sides">
+          <div class="active side">
+            <div class="content">
+              <div class="center">
+                <i class="wizard icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="four column stackable row">
+    <div class="column">
+      <div class="ui cube shape">
+        <div class="sides">
+          <div class="active side">
+            <div class="content">
+              <div class="center">
+                <i class="cube icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+     <div class="ui cube shape">
+        <div class="sides">
+          <div class="active side">
+            <div class="content">
+              <div class="center">
+                <i class="file text icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+     <div class="ui cube shape">
+        <div class="sides">
+          <div class="active side">
+            <div class="content">
+              <div class="center">
+                <i class="database icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
         
@@ -141,47 +191,33 @@
 
 
     </div>
-    <div class="ui inverted vertical footer segment">
-        <div class="ui center aligned container">
-            <div class="ui stackable inverted divided grid">
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Group 1</h4>
-                    <div class="ui inverted link list">
-                        <a class="item" href="#">Link One</a> <a class="item"
-                        href="#">Link Two</a> <a class="item" href="#">Link
-                        Three</a> <a class="item" href="#">Link Four</a>
-                    </div>
-                </div>
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Group 2</h4>
-                    <div class="ui inverted link list">
-                        <a class="item" href="#">Link One</a> <a class="item"
-                        href="#">Link Two</a> <a class="item" href="#">Link
-                        Three</a> <a class="item" href="#">Link Four</a>
-                    </div>
-                </div>
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Group 3</h4>
-                    <div class="ui inverted link list">
-                        <a class="item" href="#">Link One</a> <a class="item"
-                        href="#">Link Two</a> <a class="item" href="#">Link
-                        Three</a> <a class="item" href="#">Link Four</a>
-                    </div>
-                </div>
-                <div class="seven wide column">
-                    <h4 class="ui inverted header">Footer Header</h4>
-                    <p>Extra space for a call to action inside the footer that
-                    could help re-engage users.</p>
-                </div>
-            </div>
-            <div class="ui inverted section divider"></div><img class=
-            "ui centered mini image" src="../assets/images/logo.png">
-            <div class="ui horizontal inverted small divided link list">
-                <a class="item" href="#">Site Map</a> <a class="item" href=
-                "#">Contact Us</a> <a class="item" href="#">Terms and
-                Conditions</a> <a class="item" href="#">Privacy Policy</a>
-            </div>
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contact Us</a>
+            <a href="#" class="item">Religious Ceremonies</a>
+            <a href="#" class="item">Gazebo Plans</a>
+          </div>
         </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Banana Pre-Order</a>
+            <a href="#" class="item">DNA FAQ</a>
+            <a href="#" class="item">How To Access</a>
+            <a href="#" class="item">Favorite X-Men</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Hogeschool Utrecht - ipas</h4>
+          <p>Invidueel propedeuse assignment.<br />Project gemaakt door Quinten Peels - V1D</p>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>
