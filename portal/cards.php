@@ -19,6 +19,9 @@
     <link href="../dist/components/shape.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/breadcrumb.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/label.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/form.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/card.css" rel="stylesheet" type="text/css">
+
 
     <link href="../dist/components/menu.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/divider.css" rel="stylesheet" type=
@@ -49,7 +52,7 @@
     </style>
 </head>
 <body>
-   <?php include 'includes/menu.php'; ?>
+<?php include 'includes/menu.php'; ?>
     <div class="ui main container">
 
         <div class="ui grid">
@@ -62,107 +65,70 @@
                 </div>
             </div>
         </div>
-
-        <div class="ui stackable grid">
-  <div class="four column row">
-    <div class="column">
-      <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="alarm icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+<br /><br />
+<div class="ui link centered cards">
+  <div class="card">
+    <div class="image">
+      <img src="images/familycard.jpg">
+    </div>
+    <div class="content">
+      <div class="header">Family card</div>
+      <div class="meta">
+        <a>Used for family & close friends</a>
       </div>
     </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="protect icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="send icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="wizard icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="extra content">
+      <span class="right floated">
+        Last edit: 9 may 2016
+      </span>
+      <span>
+        <i class="unhide icon"></i>
+        75 shares
+      </span>
     </div>
   </div>
-
-  <div class="four column stackable row">
-    <div class="column">
-      <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="cube icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="card">
+    <div class="image">
+      <img src="images/friendscard.jpg">
+    </div>
+    <div class="content">
+      <div class="header">Personal card</div>
+      <div class="meta">
+        <span class="date">Used for friends</span>
       </div>
     </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="file text icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="database icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="extra content">
+      <span class="right floated">
+        Last edit: 2 may 2016
+      </span>
+      <span>
+        <i class="unhide icon"></i>
+        35 shares
+      </span>
     </div>
   </div>
-
+  <div class="card">
+    <div class="image">
+      <img src="images/publiccard.jpg">
+    </div>
+    <div class="content">
+      <div class="header">Public Card</div>
+      <div class="meta">
+        <a>Used for unknown people</a>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        Last edit: 25 may 2016
+      </span>
+      <span>
+        <i class="unhide icon"></i>
+        151 shares
+      </span>
+    </div>
+  </div>
 </div>
-
+</div>
         
 
 

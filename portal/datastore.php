@@ -19,6 +19,9 @@
     <link href="../dist/components/shape.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/breadcrumb.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/label.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/form.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/input.css" rel="stylesheet" type="text/css">
+
 
     <link href="../dist/components/menu.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/divider.css" rel="stylesheet" type=
@@ -49,7 +52,7 @@
     </style>
 </head>
 <body>
-   <?php include 'includes/menu.php'; ?>
+<?php include 'includes/menu.php'; ?>
     <div class="ui main container">
 
         <div class="ui grid">
@@ -62,107 +65,106 @@
                 </div>
             </div>
         </div>
-
-        <div class="ui stackable grid">
-  <div class="four column row">
-    <div class="column">
-      <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="alarm icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="protect icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="send icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="wizard icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="four column stackable row">
-    <div class="column">
-      <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="cube icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="file text icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="database icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<br /><br />
+<div class="ui two column centered grid" style="padding:25px 0px;">
+  <div class="column ui centered center aligned segment"><img src="images/1_quintenpeels.jpg" class="ui medium centered circular bordered image"><h3>Quinten Peels</h3><p>Member since 3 may 2016</p><p>92 datasets filled in</p></div>
 </div>
+<div class="ui form">
+  <h2>Personal data</h2>
+  <div class="fields">
+    <div class="six wide field">
+      <label>First name</label>
+      <input type="text" placeholder="First Name">
+    </div>
+    <div class="four wide field">
+      <label>Middle</label>
+      <input type="text" placeholder="Middle Name">
+    </div>
+    <div class="six wide field">
+      <label>Last name</label>
+      <input type="text" placeholder="Last Name">
+    </div>
+  </div>
+    <div class="fields">
+    <div class="two wide field">
+      <label>Gender</label>
+      <select class="ui compact selection dropdown">
+        <option selected="" value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="four wide field">
+      <label>Date of Birth</label>
+      <input type="text" placeholder="Date of Birth">
+    </div>
+    <div class="four wide field">
+      <label>Place of Birth</label>
+      <input type="text" placeholder="Place of Birth">
+    </div>
+  </div>
+</div><br /><br />
 
+<div class="ui form">
+  <h2>Web presence</h2>
+  <div class="fields">
+
+    <div class="two wide field">
+      <label>Facebook</label>
+      <div class="ui left labeled input">
+        <div class="ui label"><i class="facebook icon"></i></div>
+        <input type="text" placeholder="/John.Dee">
+      </div>
+    </div>
+    <div class="two wide field">
+      <label>Twitter</label>
+      <div class="ui left labeled input">
+        <div class="ui label"><i class="twitter icon"></i></div>
+        <input type="text" placeholder="@JohnDee">
+      </div>
+    </div>
+    <div class="two wide field">
+      <label>Skype</label>
+      <div class="ui left labeled input">
+        <div class="ui label"><i class="skype icon"></i></div>
+        <input type="text" placeholder="JohnDee">
+      </div>
+    </div>
+
+     <div class="three wide field">
+      <label>Email (Personal)</label>
+        <input type="text" placeholder="John@gmail.com">
+    </div>
+    <div class="three wide field">
+      <label>Email (Business)</label>
+        <input type="text" placeholder="John@office.com">
+    </div>
+    <div class="three wide field">
+      <label>Website</label>
+        <input type="text" placeholder="http://mysite.com">
+    </div>
+
+
+  </div>
+
+
+    <div class="fields">
+    <div class="two wide field">
+      <label>Gender</label>
+      <select class="ui compact selection dropdown">
+        <option selected="" value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="four wide field">
+      <label>Date of Birth</label>
+      <input type="text" placeholder="Date of Birth">
+    </div>
+    <div class="four wide field">
+      <label>Place of Birth</label>
+      <input type="text" placeholder="Place of Birth">
+    </div>
+  </div>
+</div>
         
 
 
