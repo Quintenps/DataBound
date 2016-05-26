@@ -21,6 +21,8 @@
     <link href="../dist/components/label.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/form.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/input.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/table.css" rel="stylesheet" type="text/css">
+
 
 
     <link href="../dist/components/menu.css" rel="stylesheet" type="text/css">
@@ -67,7 +69,27 @@
         </div>
 <br /><br />
 <div class="ui two column centered grid" style="padding:25px 0px;">
-  <div class="column ui centered center aligned segment"><img src="images/1_quintenpeels.jpg" class="ui medium centered circular bordered image"><h3>Quinten Peels</h3><p>Member since 3 may 2016</p><p>92 datasets filled in</p></div>
+  <div class="column ui centered center aligned segment">
+    <img src="images/1_quintenpeels.jpg" class="ui medium centered circular bordered image">
+    <h3>Quinten Peels</h3><p>Member since 3 may 2016</p><br />
+    <table class="ui basic centered center aligned celled table">
+  <tbody>
+    <tr>
+      <td>Used datafields</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Cards shared</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Cards received</td>
+      <td>92</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
 </div>
 <div class="ui form">
   <h2>Personal data</h2>
