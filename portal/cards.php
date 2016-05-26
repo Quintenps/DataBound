@@ -67,26 +67,7 @@
         </div>
 <br /><br />
 <div class="ui link centered cards">
-  <div class="card">
-    <div class="image">
-      <img src="images/familycard.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Family card</div>
-      <div class="meta">
-        <a>Used for family & close friends</a>
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        Last edit: 9 may 2016
-      </span>
-      <span>
-        <i class="unhide icon"></i>
-        75 shares
-      </span>
-    </div>
-  </div>
+
   <div class="card">
     <div class="image">
       <img src="images/friendscard.jpg">
@@ -107,6 +88,28 @@
       </span>
     </div>
   </div>
+
+  <div class="card">
+    <div class="image">
+      <img src="images/businesscard.jpg">
+    </div>
+    <div class="content">
+      <div class="header">Business card</div>
+      <div class="meta">
+        <a>Used for business</a>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        Last edit: 9 may 2016
+      </span>
+      <span>
+        <i class="unhide icon"></i>
+        75 shares
+      </span>
+    </div>
+  </div>
+
   <div class="card">
     <div class="image">
       <img src="images/publiccard.jpg">
