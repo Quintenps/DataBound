@@ -70,7 +70,7 @@
 <br /><br />
 <div class="ui two column centered grid" style="padding:25px 0px;">
   <div class="column ui centered center aligned segment">
-    <img src="images/1_quintenpeels.jpg" class="ui medium centered circular bordered image">
+    <img src="images/1_quintenpeels.jpg" class="ui small centered circular bordered image">
     <h3>Quinten Peels</h3><p>Member since 3 may 2016</p><br />
     <table class="ui basic centered center aligned celled table">
   <tbody>
@@ -91,6 +91,7 @@
 
   </div>
 </div>
+<form class="ui form">
 <div class="ui form">
   <h2>Personal data</h2>
   <div class="fields">
@@ -187,7 +188,9 @@
     </div>
   </div>
 </div>
-        
+<br /><br />
+  <button class="ui button  green large" type="submit">Submit</button>
+</form>        
 
 
 

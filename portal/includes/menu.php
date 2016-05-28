@@ -12,7 +12,7 @@
                         <div class="header">
                             Profile
                         </div><a class="item" href="datastore.php">Datastore</a> <a class=
-                        "item" href="#">User listing</a> <a class="item" href=
+                        "item" href="userlisting.php">User listing</a> <a class="item" href=
                         "cards.php">Send card</a>
                         <div class="divider"></div><a class="item" href=
                         "#">Settings</a> <a class="item" href="#">Logout</a>

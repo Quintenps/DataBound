@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     name="viewport"><!-- Site Properties -->
     <title>Simple Data</title>
+
     <link href="../dist/components/reset.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/site.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/container.css" rel="stylesheet" type=
@@ -29,6 +30,8 @@
     <link href="../dist/components/dropdown.css" rel="stylesheet" type=
     "text/css">
     <link href="../dist/components/icon.css" rel="stylesheet" type="text/css">
+    <link href="../dist/style.css" rel="stylesheet" type="text/css">
+
     <style type="text/css">
     body {
     background-color: #FFFFFF;
@@ -66,38 +69,27 @@
         <div class="ui stackable grid">
   <div class="four column row">
     <div class="column">
-      <div class="ui cube shape">
+      <a href="javascript:void(null)" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
               <div class="center">
-                <i class="alarm icon"></i>
+                <i class="database icon"></i>
+                <h5>My Datastore</h5>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
     <div class="column">
-     <div class="ui cube shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="protect icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-     <div class="ui cube shape">
+     <div class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
               <div class="center">
                 <i class="send icon"></i>
+                <h5>Send card</h5>
               </div>
             </div>
           </div>
@@ -105,7 +97,21 @@
       </div>
     </div>
     <div class="column">
-     <div class="ui cube shape">
+     <div class="ui cube dashBlock shape">
+        <div class="sides">
+          <div class="active side">
+            <div class="content">
+              <div class="center">
+                <i class="users icon"></i>
+                <h5>Memberlist</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+     <div class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -121,7 +127,7 @@
 
   <div class="four column stackable row">
     <div class="column">
-      <div class="ui cube shape">
+      <div class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -134,7 +140,7 @@
       </div>
     </div>
     <div class="column">
-     <div class="ui cube shape">
+     <div class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -147,7 +153,7 @@
       </div>
     </div>
     <div class="column">
-     <div class="ui cube shape">
+     <div class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -163,11 +169,9 @@
 
 </div>
 
-        
 
 
-
-    </div>
+</div>
 <?php include 'includes/footer.php'; ?>
 </body>
 </html>

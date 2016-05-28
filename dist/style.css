@@ -21,3 +21,6 @@
 }
 
 .featured > .column { padding: 75px 20px !important;}
+
+.dashBlock { opacity: 0.8; border: 1px solid rgba(0,0,0,0.1); }
+.dashBlock:hover { opacity: 1; background-color: rgba(0,0,150,0.3); }
