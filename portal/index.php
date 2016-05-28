@@ -66,8 +66,7 @@
             </div>
         </div>
 
-        <div class="ui stackable grid">
-  <div class="four column row">
+  <div class="four column ui stackable grid">
     <div class="column">
       <a href="javascript:void(null)" class="ui cube dashBlock shape">
         <div class="sides">
@@ -110,6 +109,18 @@
         </div>
       </div>
     </div>
+
+    <div class="column">
+      <h3>Quick Help</h3>
+    <div class="ui vertical text menu">
+      <a class="item">FAQ</a>
+      <a class="item">Share cards</a>
+      <a class="item">Filling my Datastore</a>
+    </div>
+    </div>
+</div>
+
+<div class="four column ui stackable grid">
     <div class="column">
      <div class="ui cube dashBlock shape">
         <div class="sides">
@@ -123,9 +134,7 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="four column stackable row">
     <div class="column">
       <div class="ui cube dashBlock shape">
         <div class="sides">
@@ -152,23 +161,7 @@
         </div>
       </div>
     </div>
-    <div class="column">
-     <div class="ui cube dashBlock shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="database icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
-
 
 
 </div>
