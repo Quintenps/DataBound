@@ -1,6 +1,6 @@
     <div class="ui fixed inverted menu">
         <div class="ui container">
-            <a class="header item" href="#"><img src="../images/logo-icon.svg" style="width:64px margin:-15px;"></a> <a class="item"
+            <a class="header item" href="#"><img src="../images/logo-icon.svg" style="width:64px padding:0px 10px; margin:-15px 5px;">  DataBound</a> <a class="item"
             href="index.php">Home</a> <a class="item" href="messages.php">Messages
             <div class="ui red label">
                 4
