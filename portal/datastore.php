@@ -22,6 +22,8 @@
     <link href="../dist/components/form.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/input.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/table.css" rel="stylesheet" type="text/css">
+    <link href="../dist/style.css" rel="stylesheet" type="text/css">
+
 
 
 
@@ -53,8 +55,9 @@
     }
     </style>
 </head>
-<body>
-<?php include 'includes/menu.php'; ?>
+<body class="Site">
+<header><?php include 'includes/menu.php'; ?></header>
+<main class="Site-content">
     <div class="ui main container">
 
         <div class="ui grid">
@@ -194,7 +197,7 @@
 
 
 
-    </div>
-<?php include 'includes/footer.php'; ?>
+    </div></main>
+<footer><?php include 'includes/footer.php'; ?></footer>
 </body>
 </html>

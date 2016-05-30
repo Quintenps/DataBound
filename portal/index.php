@@ -51,8 +51,9 @@
     }
     </style>
 </head>
-<body>
-   <?php include 'includes/menu.php'; ?>
+<body class="Site">
+   <header><?php include 'includes/menu.php'; ?></header>
+    <main class="Site-content">
     <div class="ui main container">
 
         <div class="ui grid">
@@ -165,6 +166,8 @@
 
 
 </div>
-<?php include 'includes/footer.php'; ?>
+</main>
+
+<footer><?php include 'includes/footer.php'; ?></footer>
 </body>
 </html>
