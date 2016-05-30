@@ -68,7 +68,7 @@
 
   <div class="four column ui stackable grid">
     <div class="column">
-      <a href="javascript:void(null)" class="ui cube dashBlock shape">
+      <a href="datastore.php" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -82,7 +82,7 @@
       </a>
     </div>
     <div class="column">
-     <div class="ui cube dashBlock shape">
+     <a href="cards.php" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -93,10 +93,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
     <div class="column">
-     <div class="ui cube dashBlock shape">
+     <a href="userlisting.php" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -107,7 +107,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="column">
@@ -122,7 +122,7 @@
 
 <div class="four column ui stackable grid">
     <div class="column">
-     <div class="ui cube dashBlock shape">
+     <a href="javascript:void(null)" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -132,11 +132,11 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="column">
-      <div class="ui cube dashBlock shape">
+      <a href="javascript:void(null)" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -146,10 +146,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
     <div class="column">
-     <div class="ui cube dashBlock shape">
+     <a href="javascript:void(null)" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -159,7 +159,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 </div>
 
