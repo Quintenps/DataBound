@@ -26,6 +26,8 @@
 
 
     <link href="../dist/components/menu.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/table.css" rel="stylesheet" type="text/css">
+
     <link href="../dist/components/divider.css" rel="stylesheet" type=
     "text/css">
     <link href="../dist/components/list.css" rel="stylesheet" type="text/css">
@@ -70,30 +72,53 @@
         </div>
 <br /><br />
 
+<div class="ui grid" style="padding:25px 0px;">
+  <div class="three column row">
+    <div class="column"></div>
+    <div class="column center aligned">
+    <img src="images/1_quintenpeels.jpg" class="ui small centered circular bordered image">
+    <h3>Quinten Peels</h3><p>Member since 3 may 2016</p><br />
+      <table class="ui basic celled table">
+  <tbody>
+    <tr>
+      <td>Used datafields</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Cards shared</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Cards received</td>
+      <td>92</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="column"></div>
 
+  </div>
+</div>
 
 <div class="ui grid">
   <div class="three column row">
     <div class="column"><form class="ui form">
-  <h3>Account information</h3>
+  <h3>Profile picture</h3>
   <div class="field">
-    <label>Account ID</label>
-    <input type="text" disabled="" placeholder="1">
+    <label>Avatar URL (Has to end with .jpg)</label>
+    <input type="text" disabled="" placeholder="http://i.imgur.com/A1MnGZ7.jpg">
   </div>
-  <div class="field">
-    <label>Registration date</label>
-    <input type="text" disabled="" placeholder="2 March 2016">
-  </div>
+  <button class="ui button green" type="submit">Update avatar</button>
 </form></div>
 <div class="column"><form class="ui form">
   <h3>Update password</h3>
   <div class="field">
     <label>Current Password</label>
-    <input type="text" name="first-name" placeholder="Current password">
+    <input type="text" name="currentPassword" placeholder="Current password">
   </div>
   <div class="field">
     <label>New Password</label>
-    <input type="text" name="last-name" placeholder="New password">
+    <input type="text" name="newPassword" placeholder="New password">
   </div>
   <button class="ui button green" type="submit">Update password</button>
 </form></div>
@@ -105,23 +130,6 @@
   </div>
   <button class="ui button green" type="submit">Update nickname</button>
 </form></div>
-  </div>
-</div>
-
-<div class="ui grid">
-  <div class="three column row">
-    <div class="column"></div>
-
-    <div class="column"></div>
-  </div>
-</div>
-
-
-<div class="ui grid">
-  <div class="three column row">
-    <div class="column"></div>
-    
-    <div class="column"></div>
   </div>
 </div>
         
