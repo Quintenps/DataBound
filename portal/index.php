@@ -123,12 +123,13 @@
 
 <div class="four column ui stackable grid">
     <div class="column">
-     <a href="javascript:void(null)" class="ui cube dashBlock shape">
+     <a href="form.php" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
               <div class="center">
-                <i class="wizard icon"></i>
+                <i class="file text outline icon"></i>
+                <h5>Send form</h5>
               </div>
             </div>
           </div>
