@@ -88,8 +88,8 @@
           <div class="active side">
             <div class="content">
               <div class="center">
-                <i class="send icon"></i>
-                <h5>Send card</h5>
+                <i class="file text outline icon"></i>
+                <h5>My Cards</h5>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@
           <div class="active side">
             <div class="content">
               <div class="center">
-                <i class="file text outline icon"></i>
-                <h5>Send form</h5>
+                <i class="unordered list icon"></i>
+                <h5>Request data</h5>
               </div>
             </div>
           </div>
@@ -137,32 +137,7 @@
       </a>
     </div>
 
-    <div class="column">
-      <a href="javascript:void(null)" class="ui cube dashBlock shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="cube icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="column">
-     <a href="javascript:void(null)" class="ui cube dashBlock shape">
-        <div class="sides">
-          <div class="active side">
-            <div class="content">
-              <div class="center">
-                <i class="file text icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+
 </div>
 
 

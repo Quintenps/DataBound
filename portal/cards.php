@@ -21,7 +21,13 @@
     <link href="../dist/components/label.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/form.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/card.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/dropdown.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/transition.css" rel="stylesheet" type="text/css">
     <link href="../dist/style.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="../dist/components/dropdown.min.js"></script>
+    <script src="../dist/components/transition.min.js"></script>
 
 
 
@@ -69,9 +75,39 @@
             </div>
         </div>
 <br /><br />
+
+<div class="ui form">
+  <div class="fields">
+    <div class="field">
+      <label>Recipient ID</label>
+      <input type="number">
+    </div>
+    <div class="field">
+        <label>Gender</label>
+        <select class="ui dropdown">
+          <option value="">Choose card</option>
+          <option value="1">Personal</option>
+          <option value="0">Business</option>
+          <option value="3">Unknown</option>
+        </select>
+    </div>
+    <div class="field">
+      <label style="opacity:0;">123</label>
+      <button class="ui button small green">Send</button>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+<script>
+$('select.dropdown')
+  .dropdown()
+;
+</script>
+
 <div class="ui link centered cards">
 
-  <div class="card">
+ <a class="card" href="editcard.php">
     <div class="image">
       <img src="images/friendscard.jpg">
     </div>
@@ -90,49 +126,51 @@
         35 shares
       </span>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+ <a class="card" href="editcard.php">
     <div class="image">
       <img src="images/businesscard.jpg">
     </div>
     <div class="content">
       <div class="header">Business card</div>
       <div class="meta">
-        <a>Used for business</a>
+        <span class="date">Used for business</span>
       </div>
     </div>
     <div class="extra content">
       <span class="right floated">
-        Last edit: 9 may 2016
+        Last edit: 2 may 2016
       </span>
       <span>
         <i class="unhide icon"></i>
-        75 shares
+        92 shares
       </span>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+   <a class="card" href="editcard.php">
     <div class="image">
       <img src="images/publiccard.jpg">
     </div>
     <div class="content">
-      <div class="header">Public Card</div>
+      <div class="header">Public card</div>
       <div class="meta">
-        <a>Used for unknown people</a>
+        <span class="date">Used for unknown people</span>
       </div>
     </div>
     <div class="extra content">
       <span class="right floated">
-        Last edit: 25 may 2016
+        Last edit: 22 may 2016
       </span>
       <span>
         <i class="unhide icon"></i>
-        151 shares
+        241 shares
       </span>
     </div>
-  </div>
+  </a>
+ 
+
 </div>
 </div>
         
