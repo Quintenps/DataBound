@@ -92,7 +92,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>First name</label>
     </div>
-    <p>: Quinten</p>
+    <div class="ui left pointing label">Quinten</div>
   </div>
 
     <div class="inline field">
@@ -100,7 +100,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Middle name</label>
     </div>
-    <p>: Roelofs</p>
+    <div class="ui left pointing label">Roelof</div>
   </div>
 
     <div class="inline field">
@@ -108,7 +108,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Last name</label>
     </div>
-    <p>: Peels</p>
+    <div class="ui left pointing label">Peels</div>
   </div>
 
     <div class="inline field">
@@ -116,7 +116,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Age</label>
     </div>
-    <p>: 22</p>
+    <div class="ui left pointing label">22</div>
   </div>
 
     <div class="inline field">
@@ -124,7 +124,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Gender</label>
     </div>
-    <p>: Male</p>
+    <div class="ui left pointing label">Male</div>
   </div>
 
     <div class="inline field">
@@ -132,7 +132,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Date of Birth</label>
     </div>
-    <p>: 20-03-1994</p>
+    <div class="ui left pointing label">20-03-1994</div>
   </div>
 
       <div class="inline field">
@@ -140,7 +140,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Place of Birth</label>
     </div>
-    <p>: Nieuwegein</p>
+    <div class="ui left pointing label">Nieuwegein</div>
   </div>
 </div>
 <br /><br />
@@ -192,8 +192,50 @@
 </div><br /><br />
 <button class="ui green button">Update card</button>
 </form>
+<br /><br /><br /><br />
 
+
+<div class="ui middle aligned divided list ">
+  <h1>People you shared this card with</h1><br />
+  <div class="item">
+    <div class="right floated content">
+      <div class="ui button red tiny">Remove access</div>
+    </div>
+    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
+    <div class="content">
+      Lena
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <div class="ui button red tiny">Remove access</div>
+    </div>
+    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
+    <div class="content">
+      Lindsay
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <div class="ui button red tiny">Remove access</div>
+    </div>
+    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
+    <div class="content">
+      Mark
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <div class="ui button red tiny">Remove access</div>
+    </div>
+    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
+    <div class="content">
+      Molly
+    </div>
+  </div>
 </div>
+</div>
+
         
     <script>
 $('.ui.checkbox').checkbox();
