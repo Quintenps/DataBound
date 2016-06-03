@@ -21,6 +21,7 @@
     <link href="../dist/components/label.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/form.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/card.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/label.css" rel="stylesheet" type="text/css">
 
 
     <link href="../dist/components/menu.css" rel="stylesheet" type="text/css">
@@ -103,7 +104,8 @@ $i = 1;
     echo '
   <div class="item">
       <div class="right floated content">
-        <div class="ui button">Add</div>
+          <a class="ui blue label">ID<div class="detail">#'.$i.'</div>
+  </a>
       </div>
 
     <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
