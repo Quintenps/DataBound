@@ -76,7 +76,8 @@
         </div>
 <br /><br />
 
-<div class="ui form">
+<div class="ui form stacked">
+  <h2>Quick Send</h2>
   <div class="fields">
     <div class="field">
       <label>Recipient ID</label>
@@ -105,8 +106,8 @@ $('select.dropdown')
 ;
 </script>
 
+<h2>My Cards</h2>
 <div class="ui link centered cards">
-
  <a class="card" href="editcard.php">
     <div class="image">
       <img src="images/friendscard.jpg">

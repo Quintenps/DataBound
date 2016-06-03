@@ -92,6 +92,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>First name</label>
     </div>
+    <p>: Quinten</p>
   </div>
 
     <div class="inline field">
@@ -99,6 +100,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Middle name</label>
     </div>
+    <p>: Roelofs</p>
   </div>
 
     <div class="inline field">
@@ -106,6 +108,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Last name</label>
     </div>
+    <p>: Peels</p>
   </div>
 
     <div class="inline field">
@@ -113,6 +116,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Age</label>
     </div>
+    <p>: 22</p>
   </div>
 
     <div class="inline field">
@@ -120,6 +124,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Gender</label>
     </div>
+    <p>: Male</p>
   </div>
 
     <div class="inline field">
@@ -127,6 +132,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Date of Birth</label>
     </div>
+    <p>: 20-03-1994</p>
   </div>
 
       <div class="inline field">
@@ -134,6 +140,7 @@
       <input type="checkbox" tabindex="0" class="hidden">
       <label>Place of Birth</label>
     </div>
+    <p>: Nieuwegein</p>
   </div>
 </div>
 <br /><br />
