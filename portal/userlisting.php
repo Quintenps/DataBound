@@ -108,7 +108,7 @@ $i = 1;
   </a>
       </div>
 
-    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
+    <img class="ui avatar image" src="https://api.adorable.io/avatars/128/.'.rand(1,50000).'@adorable.io.png">
     <div class="content">
       '.$random_name . ' ' . $random_surname.'
     </div>
