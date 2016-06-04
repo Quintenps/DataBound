@@ -97,19 +97,20 @@
       </a>
     </div>
     <div class="column">
-     <a href="userlisting.php" class="ui cube dashBlock shape">
+     <a href="cardsreceived.php" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
               <div class="center">
-                <i class="users icon"></i>
-                <h5>Memberlist</h5>
+                <i class="inbox icon"></i>
+                <h5>Cards received</h5>
               </div>
             </div>
           </div>
         </div>
       </a>
     </div>
+
 
     <div class="column">
       <h3>Quick Help</h3>
@@ -130,6 +131,20 @@
               <div class="center">
                 <i class="unordered list icon"></i>
                 <h5>Request data</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column">
+     <a href="userlisting.php" class="ui cube dashBlock shape">
+        <div class="sides">
+          <div class="active side">
+            <div class="content">
+              <div class="center">
+                <i class="users icon"></i>
+                <h5>Memberlist</h5>
               </div>
             </div>
           </div>
