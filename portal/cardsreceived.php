@@ -150,6 +150,7 @@ $i = 1;
       <a href="mailto:#">Quinten@Peels.me</a>
     </div>
   </div>
+</div>
     </div>
   </div>
 </div>
