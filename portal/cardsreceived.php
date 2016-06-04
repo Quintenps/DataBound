@@ -42,6 +42,8 @@
     <link href="../dist/components/dropdown.css" rel="stylesheet" type=
     "text/css">
     <link href="../dist/components/icon.css" rel="stylesheet" type="text/css">
+    <link href="../dist/style.css" rel="stylesheet" type="text/css">
+    
     <style type="text/css">
     body {
     background-color: #FFFFFF;
@@ -61,8 +63,9 @@
     }
     </style>
 </head>
-<body>
+<body class="Site">
 <?php include 'includes/menu.php'; ?>
+<main class="Site-content">
     <div class="ui main container">
 
         <div class="ui grid">
@@ -173,6 +176,7 @@ $('.ui.modal').modal('show');
 
 
     </div>
-<?php include 'includes/footer.php'; ?>
+</main>
+<footer><?php include 'includes/footer.php'; ?></footer>
 </body>
 </html>
