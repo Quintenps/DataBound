@@ -116,8 +116,9 @@ $i = 1;
     echo '
   <div class="item">
       <div class="right floated content">
-          <a class="ui blue label">PublicCard</a>
-          <a class="ui green label">UnknownCard</a>
+      <a class="ui blue label"><i class="arrow up icon"></i> PublicCard</a>
+          <a class="ui blue label"><i class="arrow down icon"></i> PublicCard</a>
+          <a class="ui green label"><i class="arrow down icon"></i> UnknownCard</a>
       </div>
 
     <img class="ui avatar image" src="https://api.adorable.io/avatars/128/.'.rand(1,50000).'@adorable.io.png">
