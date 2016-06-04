@@ -43,7 +43,7 @@
     "text/css">
     <link href="../dist/components/icon.css" rel="stylesheet" type="text/css">
     <link href="../dist/style.css" rel="stylesheet" type="text/css">
-    
+
     <style type="text/css">
     body {
     background-color: #FFFFFF;
@@ -135,28 +135,21 @@ $i = 1;
   <div class="item">
     <i class="users icon"></i>
     <div class="content">
-      Semantic UI
+      Quinten Roelof Peels
     </div>
   </div>
   <div class="item">
     <i class="marker icon"></i>
     <div class="content">
-      New York, NY
+      The Netherlands, Utrecht, Houten
     </div>
   </div>
   <div class="item">
     <i class="mail icon"></i>
     <div class="content">
-      <a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+      <a href="mailto:#">Quinten@Peels.me</a>
     </div>
   </div>
-  <div class="item">
-    <i class="linkify icon"></i>
-    <div class="content">
-      <a href="http://www.semantic-ui.com">semantic-ui.com</a>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 </div>
