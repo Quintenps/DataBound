@@ -172,6 +172,6 @@ $('.ui.modal').modal('show');
 
     </div>
 </main>
-<footer><?php include 'includes/footer.php'; ?></footer>
+<jsp:include page="includes/footer.jsp" />
 </body>
 </html>

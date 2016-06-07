@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>guestfunctions.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/RegisterServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>guestfunctions.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DataStore</servlet-name>
+        <servlet-class>platform.DataStore</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DataStore</servlet-name>
+        <url-pattern>/SubmitData.do</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>userSession</filter-name>
+        <filter-class>utils.userSession</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>userSession</filter-name>
+        <url-pattern>/portal/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+</web-app>

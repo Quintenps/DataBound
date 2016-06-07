@@ -65,7 +65,7 @@
     </style>
 </head>
 <body class="Site">
-<header><?php include 'includes/menu.php'; ?></header>
+<jsp:include page="includes/menu.jsp" />
 <main class="Site-content">
     <div class="ui main container">
 
@@ -80,34 +80,34 @@
             </div>
         </div>
 <br /><br />
-<form class="ui form">
+<form class="ui form" method="post" action="/SubmitData.do">
 <div class="ui form">
   <h2>Personal data</h2>
   <div class="fields">
     <div class="six wide field">
       <label>First name</label>
-      <input type="text" placeholder="First Name">
+      <input type="text" name="firstname" placeholder="First Name">
     </div>
     <div class="four wide field">
       <label>Middle</label>
-      <input type="text" placeholder="Middle Name">
+      <input type="text" name="middlename" placeholder="Middle Name">
     </div>
     <div class="six wide field">
       <label>Last name</label>
-      <input type="text" placeholder="Last Name">
+      <input type="text" name="lastname" placeholder="Last Name">
     </div>
   </div>
     <div class="fields">
     <div class="two wide field">
       <label>Gender</label>
-      <select class="ui compact selection dropdown">
+      <select class="ui compact selection dropdown" name="gender">
         <option selected="" value="male">Male</option>
         <option value="female">Female</option>
       </select>
     </div>
     <div class="four wide field">
       <label>Date of Birth</label>
-      <input type="text" placeholder="Date of Birth">
+      <input type="text" name="dateofbirth" placeholder="Date of Birth">
     </div>
 <div class="four wide field">
   <label>Country</label>
@@ -364,11 +364,11 @@
 </div>
     <div class="three wide field">
       <label>City</label>
-      <input type="text" placeholder="Utrecht">
+      <input type="text" name="city" placeholder="Utrecht">
     </div>
     <div class="three wide field">
       <label>Town</label>
-      <input type="text" placeholder="Houten">
+      <input type="text" name="town" placeholder="Houten">
     </div>
 
   </div>
@@ -383,35 +383,35 @@
       <label>Facebook</label>
       <div class="ui left labeled input">
         <div class="ui label"><i class="facebook icon"></i></div>
-        <input type="text" placeholder="/John.Dee">
+        <input type="text" name="facebook" placeholder="/John.Dee">
       </div>
     </div>
     <div class="two wide field">
       <label>Twitter</label>
       <div class="ui left labeled input">
         <div class="ui label"><i class="twitter icon"></i></div>
-        <input type="text" placeholder="@JohnDee">
+        <input type="text" name="twitter" placeholder="@JohnDee">
       </div>
     </div>
     <div class="two wide field">
       <label>Skype</label>
       <div class="ui left labeled input">
         <div class="ui label"><i class="skype icon"></i></div>
-        <input type="text" placeholder="JohnDee">
+        <input type="text" name="skype" placeholder="JohnDee">
       </div>
     </div>
 
      <div class="three wide field">
       <label>Email (Personal)</label>
-        <input type="text" placeholder="John@gmail.com">
+        <input type="text"  name="emailpersonal" placeholder="John@gmail.com">
     </div>
     <div class="three wide field">
       <label>Email (Business)</label>
-        <input type="text" placeholder="John@office.com">
+        <input type="text" name="emailbusiness" placeholder="John@office.com">
     </div>
     <div class="three wide field">
       <label>Website</label>
-        <input type="text" placeholder="http://mysite.com">
+        <input type="text" name="website" placeholder="http://mysite.com">
     </div>
 
 
@@ -430,6 +430,6 @@ $('.ui.dropdown')
 
 
     </div></main>
-<footer><?php include 'includes/footer.php'; ?></footer>
+<jsp:include page="includes/footer.jsp" />
 </body>
 </html>

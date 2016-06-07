@@ -1,7 +1,7 @@
     <div class="ui fixed inverted menu">
         <div class="ui container">
-            <a class="header item" href="javascript:void(null)"><img src="../images/logo-icon.svg" style="width:48px; padding:0px 10px;"> DataBound</a> <a class="item"
-            href="index.php">Home</a> <a class="item" href="messages.php">Messages
+            <a class="header item" href="index.php"><img src="../images/logo-icon.svg" style="width:48px; padding:0px 10px;"> DataBound</a> <a class="item"
+            href="/portal/index.jsp">Home</a> <a class="item" href="/portal/messages.jsp">Messages
             <div class="ui red label">
                 4
             </div></a>
@@ -11,11 +11,11 @@
                     <div class="menu">
                         <div class="header">
                             Profile
-                        </div><a class="item" href="datastore.php">Datastore</a> <a class=
-                        "item" href="userlisting.php">User listing</a> <a class="item" href=
-                        "cards.php">Send card</a>
+                        </div><a class="item" href="/portal/datastore.jsp">Datastore</a> <a class=
+                        "item" href="/portal/userlisting.jsp">User listing</a> <a class="item" href=
+                        "/portal/cards.jsp">Send card</a>
                         <div class="divider"></div><a class="item" href=
-                        "settings.php">Settings</a> <a class="item" href="../index.html">Logout</a>
+                        "/portal/settings.jsp">Settings</a> <a class="item" href="../index.html">Logout</a>
                     </div>
                 </div>
             </div>

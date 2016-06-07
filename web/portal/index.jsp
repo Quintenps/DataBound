@@ -24,7 +24,9 @@
     <link href="../dist/components/menu.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/divider.css" rel="stylesheet" type=
     "text/css">
-    <link href="../dist/components/list.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/message.css" rel="stylesheet" type=
+
+            <link href="../dist/components/list.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/segment.css" rel="stylesheet" type=
     "text/css">
     <link href="../dist/components/dropdown.css" rel="stylesheet" type=
@@ -52,24 +54,24 @@
     </style>
 </head>
 <body class="Site">
-   <header><?php include 'includes/menu.php'; ?></header>
+   <jsp:include page="includes/menu.jsp" />
     <main class="Site-content">
     <div class="ui main container">
 
         <div class="ui grid">
             <div class="four wide column">
                 <div class="ui breadcrumb">
-                    <a class="section">Home</a>
+                    <a href="/portal/index.jsp" class="section">Home</a>
                     <div class="divider">
                         /
-                    </div><a class="active section">Dashboard</a>
+                    </div><a href="/portal/index.jsp" class="active section">Dashboard</a>
                 </div>
             </div>
         </div>
 
   <div class="four column ui stackable grid">
     <div class="column">
-      <a href="datastore.php" class="ui cube dashBlock shape">
+      <a href="/portal/datastore.jsp" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -83,7 +85,7 @@
       </a>
     </div>
     <div class="column">
-     <a href="cards.php" class="ui cube dashBlock shape">
+     <a href="/portal/cards.jsp" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -97,7 +99,7 @@
       </a>
     </div>
     <div class="column">
-     <a href="cardsreceived.php" class="ui cube dashBlock shape">
+     <a href="/portal/cardsreceived.jsp" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -124,7 +126,7 @@
 
 <div class="four column ui stackable grid">
     <div class="column">
-     <a href="form.php" class="ui cube dashBlock shape">
+     <a href="/portal/form.jsp" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -138,7 +140,7 @@
       </a>
     </div>
     <div class="column">
-     <a href="userlisting.php" class="ui cube dashBlock shape">
+     <a href="/portal/userlisting.jsp" class="ui cube dashBlock shape">
         <div class="sides">
           <div class="active side">
             <div class="content">
@@ -159,6 +161,6 @@
 </div>
 </main>
 
-<footer><?php include 'includes/footer.php'; ?></footer>
+<jsp:include page="includes/footer.jsp" />
 </body>
 </html>

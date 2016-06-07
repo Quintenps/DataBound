@@ -60,7 +60,7 @@
     </style>
 </head>
 <body class="Site">
-<header><?php include 'includes/menu.php'; ?></header>
+<jsp:include page="includes/menu.jsp" />
 <main class="Site-content">
     <div class="ui main container">
 
@@ -179,6 +179,6 @@ $('select.dropdown')
 
 
     </div></main>
-<footer><?php include 'includes/footer.php'; ?></footer>
+<jsp:include page="includes/footer.jsp" />
 </body>
 </html>
