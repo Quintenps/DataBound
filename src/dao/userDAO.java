@@ -44,6 +44,34 @@ public class userDAO extends baseDAO {
         return isRegistered;
     }
 
+    public boolean isRegisteredUID(int uid) {
+
+
+        boolean isRegistered = true;
+        int GetUid = uid;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT username FROM user WHERE userid=?");
+
+            statement.setInt(1, GetUid);
+
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+
+
+            if (!sqlresult.isBeforeFirst()){
+                System.out.println("No records found!");
+                isRegistered = false;
+            }
+
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return isRegistered;
+    }
+
     public User registerUser(User user) {
 
         try (Connection con = super.getConnection()) {

@@ -26,6 +26,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>QuickSendCard</servlet-name>
+        <servlet-class>platform.SendCard</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QuickSendCard</servlet-name>
+        <url-pattern>/QuickSendCard.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>guestfunctions.LoginServlet</servlet-class>
     </servlet>

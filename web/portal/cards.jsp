@@ -76,20 +76,20 @@
         </div>
 <br /><br />
 
-<div class="ui form stacked">
+<form method="post" action="/QuickSendCard.do" class="ui form stacked">
   <h2>Quick Send</h2>
   <div class="fields">
     <div class="field">
       <label>Recipient ID</label>
-      <input type="number">
+      <input type="number" name="receiveruid">
     </div>
     <div class="field">
-        <label>Gender</label>
-        <select class="ui dropdown">
+        <label>Choose card</label>
+        <select class="ui dropdown" name="cardname">
           <option value="">Choose card</option>
-          <option value="1">Personal</option>
-          <option value="0">Business</option>
-          <option value="3">Unknown</option>
+          <option value="FamilyCard">Personal</option>
+          <option value="BusinessCard">Business</option>
+          <option value="UnknownCard">Unknown</option>
         </select>
     </div>
     <div class="field">
@@ -97,7 +97,7 @@
       <button class="ui button small green">Send</button>
     </div>
   </div>
-</div>
+</form>
 
 <br /><br />
 <script>
