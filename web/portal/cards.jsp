@@ -108,7 +108,7 @@ $('select.dropdown')
 
 <h2>My Cards</h2>
 <div class="ui link centered cards">
- <a class="card" href="editcard.php">
+ <a class="card" href="editcard.jsp">
     <div class="image">
       <img src="images/friendscard.jpg">
     </div>
@@ -129,7 +129,7 @@ $('select.dropdown')
     </div>
   </a>
 
- <a class="card" href="editcard.php">
+ <a class="card" href="editcard.jsp">
     <div class="image">
       <img src="images/businesscard.jpg">
     </div>
@@ -150,7 +150,7 @@ $('select.dropdown')
     </div>
   </a>
 
-   <a class="card" href="editcard.php">
+   <a class="card" href="editcard.jsp">
     <div class="image">
       <img src="images/publiccard.jpg">
     </div>

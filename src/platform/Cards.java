@@ -1,6 +1,7 @@
 package platform;
 
-import dao.datastoreDAO;
+import dao.cardDAO;
+import dao.cardDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,26 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
- * Created by 187z on 6/7/2016.
+ * Created by 187z on 6/8/2016.
  */
-public class DataStore extends HttpServlet {
-    private dao.datastoreDAO datastoredao;
-    ArrayList<String> postedData = new ArrayList<>();
+public class Cards extends HttpServlet {
+    private dao.cardDAO cardDAO;
     HashMap<Integer, String> hmap = new HashMap<>();
 
-    public void addtoList(String add){
-        if (!add.equals("")) {
-            postedData.add(add);
-        }
-    }
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
 
-
+        String cardname = req.getParameter("cardname");
         String firstname = req.getParameter("firstname");
         String middlename = req.getParameter("middlename");
         String lastname = req.getParameter("lastname");
@@ -64,54 +61,55 @@ public class DataStore extends HttpServlet {
         Iterator iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            if (mentry.getValue() != null || !mentry.getValue().toString().isEmpty()) {
+            if (mentry.getValue() != null || !mentry.equals(null) || !mentry.getValue().equals(null)) {
                 if ((Integer) mentry.getKey() == 1) {
-                    datastoredao.updateFirstName((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateFirstName(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 2) {
-                    datastoredao.updateMiddleName((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateMiddleName(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 3) {
-                    datastoredao.updateLastName((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateLastName(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 4) {
-                    datastoredao.updateGender((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateGender(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 5) {
-                    datastoredao.updateDateOfBirth((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateDateOfBirth(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 6) {
-                    datastoredao.updateCountry((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateCountry(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 7) {
-                    datastoredao.updateCity((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateCity(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 8) {
-                    datastoredao.updateTown((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateTown(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 9) {
-                    datastoredao.updateFacebook((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateFacebook(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 10) {
-                    datastoredao.updateTwitter((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateTwitter(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 11) {
-                    datastoredao.updateSkype((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateSkype(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 12) {
-                    datastoredao.updateEmailPersonal((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateEmailPersonal(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 13) {
-                    datastoredao.updateEmailBusiness((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateEmailBusiness(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
                 if ((Integer) mentry.getKey() == 14) {
-                    datastoredao.updateWebsite((String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
+                    cardDAO.updateWebsite(cardname,(String) mentry.getValue(), (Integer) req.getSession().getAttribute("uid"));
                 }
             }
+            else { return; }
 
         }
 
-        RequestDispatcher rd = req.getRequestDispatcher("/portal/datastore.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/portal/editcard.jsp");
 
 
 
@@ -121,7 +119,8 @@ public class DataStore extends HttpServlet {
 
         }
 
-        else { req.setAttribute("msg","Something went wrong."); rd = req.getRequestDispatcher("/portal/datastore.jsp"); }
+        else {req.setAttribute("headermsg","Error!");
+            req.setAttribute("bodymsg","Unfortunately something went wrong!");rd = req.getRequestDispatcher("/portal/datastore.jsp"); }
 
         rd.forward(req, resp);
 
@@ -129,6 +128,6 @@ public class DataStore extends HttpServlet {
     }
 
     public void init()  throws ServletException{
-        datastoredao = new datastoreDAO();
+        cardDAO = new cardDAO();
     }
 }

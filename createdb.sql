@@ -8,21 +8,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema databound
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema databound
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `databound` DEFAULT CHARACTER SET utf8 ;
+USE `databound` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Messages`
+-- Table `databound`.`Messages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Messages` ;
+DROP TABLE IF EXISTS `databound`.`Messages` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Messages` (
+CREATE TABLE IF NOT EXISTS `databound`.`Messages` (
   `messageid` INT NOT NULL AUTO_INCREMENT,
   `receive_userid` INT NULL,
   `sender_userid` INT NULL,
@@ -33,11 +33,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`User`
+-- Table `databound`.`User`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`User` ;
+DROP TABLE IF EXISTS `databound`.`User` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`User` (
+CREATE TABLE IF NOT EXISTS `databound`.`User` (
   `userid` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(32) NOT NULL,
   `password` VARCHAR(128) NOT NULL,
@@ -48,11 +48,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Datastore`
+-- Table `databound`.`Datastore`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Datastore` ;
+DROP TABLE IF EXISTS `databound`.`Datastore` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Datastore` (
+CREATE TABLE IF NOT EXISTS `databound`.`Datastore` (
   `userid` INT NOT NULL,
   `firstname` VARCHAR(45) NULL,
   `middlename` VARCHAR(45) NULL,
@@ -73,11 +73,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Cards`
+-- Table `databound`.`Cards`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Cards` ;
+DROP TABLE IF EXISTS `databound`.`Cards` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Cards` (
+CREATE TABLE IF NOT EXISTS `databound`.`Cards` (
   `userid` INT NOT NULL,
   `cardname` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NULL,
@@ -99,11 +99,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Cardshare`
+-- Table `databound`.`Cardshare`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Cardshare` ;
+DROP TABLE IF EXISTS `databound`.`Cardshare` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Cardshare` (
+CREATE TABLE IF NOT EXISTS `databound`.`Cardshare` (
   `userid` INT NOT NULL,
   `cardname` VARCHAR(45) NOT NULL,
   `receiveduser` INT NOT NULL,
@@ -112,11 +112,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Forms`
+-- Table `databound`.`Forms`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Forms` ;
+DROP TABLE IF EXISTS `databound`.`Forms` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Forms` (
+CREATE TABLE IF NOT EXISTS `databound`.`Forms` (
   `formid` INT NOT NULL AUTO_INCREMENT,
   `userid` INT NOT NULL,
   `receiveduser` INT NULL,

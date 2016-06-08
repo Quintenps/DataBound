@@ -16,6 +16,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Cards</servlet-name>
+        <servlet-class>platform.Cards</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Cards</servlet-name>
+        <url-pattern>/UpdateCard.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>guestfunctions.LoginServlet</servlet-class>
     </servlet>

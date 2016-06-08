@@ -5,3 +5,4 @@ out/
 .idea/libraries/lib.xml
 .idea/libraries/lib.xml
 .idea/sqldialects.xml
+*.iml

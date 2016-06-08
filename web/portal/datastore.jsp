@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="platform.User" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="dao.datastoreDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,10 +28,12 @@
     <link href="../dist/components/table.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/transition.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/flag.css" rel="stylesheet" type="text/css">
+  <link href="../dist/components/message.css" rel="stylesheet" type="text/css">
 
 
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="../dist/components/dropdown.min.js"></script>
     <script src="../dist/components/transition.min.js"></script>
 
@@ -65,6 +71,32 @@
     </style>
 </head>
 <body class="Site">
+<%
+  User person = (User)session.getAttribute("loggedUser");
+  datastoreDAO datastoredao = new datastoreDAO();
+  HashMap<Integer, String> allData = datastoredao.selectAllData(person);
+  Object headermsg = request.getAttribute("headermsg");
+  Object bodymsg = request.getAttribute("bodymsg");
+
+  pageContext.setAttribute("hashmap", allData);
+
+  pageContext.setAttribute("firstname", 1);
+  pageContext.setAttribute("middlename", 2);
+  pageContext.setAttribute("lastname", 3);
+  pageContext.setAttribute("gender", 4);
+  pageContext.setAttribute("dateofbirth", 5);
+  pageContext.setAttribute("country", 6);
+  pageContext.setAttribute("city", 7);
+  pageContext.setAttribute("town", 8);
+  pageContext.setAttribute("facebook", 9);
+  pageContext.setAttribute("twitter", 10);
+  pageContext.setAttribute("skype", 11);
+  pageContext.setAttribute("emailpersonal", 12);
+  pageContext.setAttribute("emailbusiness", 13);
+  pageContext.setAttribute("website", 14);
+
+
+%>
 <jsp:include page="includes/menu.jsp" />
 <main class="Site-content">
     <div class="ui main container">
@@ -80,21 +112,34 @@
             </div>
         </div>
 <br /><br />
+      <%
+
+        if (headermsg != null) {
+          out.println("<div class=\"ui positive message\">\n" +
+                  "            <i class=\"close icon\"></i>\n" +
+                  "            <div class=\"header\">\n" +headermsg+
+                  "            </div>\n" +
+                  "            <p>"+bodymsg+"</p>\n" +
+                  "        </div>");
+        }
+
+
+      %>
 <form class="ui form" method="post" action="/SubmitData.do">
 <div class="ui form">
   <h2>Personal data</h2>
   <div class="fields">
     <div class="six wide field">
       <label>First name</label>
-      <input type="text" name="firstname" placeholder="First Name">
+      <input type="text" name="firstname" value="<c:out value="${hashmap[firstname]}"/>" placeholder="<c:out value="${hashmap[firstname]}"/>">
     </div>
     <div class="four wide field">
       <label>Middle</label>
-      <input type="text" name="middlename" placeholder="Middle Name">
+      <input type="text" name="middlename" value="<c:out value="${hashmap[middlename]}"/>" placeholder="<c:out value="${hashmap[middlename]}"/>">
     </div>
     <div class="six wide field">
       <label>Last name</label>
-      <input type="text" name="lastname" placeholder="Last Name">
+      <input type="text" name="lastname" value="<c:out value="${hashmap[lastname]}"/>" placeholder="<c:out value="${hashmap[lastname]}"/>">
     </div>
   </div>
     <div class="fields">
@@ -107,15 +152,15 @@
     </div>
     <div class="four wide field">
       <label>Date of Birth</label>
-      <input type="text" name="dateofbirth" placeholder="Date of Birth">
+      <input type="text" name="dateofbirth" value="<c:out value="${hashmap[dateofbirth]}"/>" placeholder="<c:out value="${hashmap[dateofbirth]}"/>">
     </div>
 <div class="four wide field">
   <label>Country</label>
 <div class="ui fluid search selection dropdown">
 
-  <input type="hidden" name="country">
+  <input type="hidden" name="country" value="<c:out value="${hashmap[country]}"/>" placeholder="<c:out value="${hashmap[country]}"/>">
   <i class="dropdown icon"></i>
-  <div class="default text">Select Country</div>
+  <div class="default text"><c:out value="${hashmap[country]}"/></div>
   <div class="menu">
   <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
   <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
@@ -364,11 +409,11 @@
 </div>
     <div class="three wide field">
       <label>City</label>
-      <input type="text" name="city" placeholder="Utrecht">
+      <input type="text" name="city" value="<c:out value="${hashmap[city]}"/>" placeholder="<c:out value="${hashmap[city]}"/>">
     </div>
     <div class="three wide field">
       <label>Town</label>
-      <input type="text" name="town" placeholder="Houten">
+      <input type="text" name="town" value="<c:out value="${hashmap[town]}"/>" placeholder="<c:out value="${hashmap[town]}"/>">
     </div>
 
   </div>
@@ -383,35 +428,35 @@
       <label>Facebook</label>
       <div class="ui left labeled input">
         <div class="ui label"><i class="facebook icon"></i></div>
-        <input type="text" name="facebook" placeholder="/John.Dee">
+        <input type="text" name="facebook" value="<c:out value="${hashmap[facebook]}"/>" placeholder="<c:out value="${hashmap[facebook]}"/>">
       </div>
     </div>
     <div class="two wide field">
       <label>Twitter</label>
       <div class="ui left labeled input">
         <div class="ui label"><i class="twitter icon"></i></div>
-        <input type="text" name="twitter" placeholder="@JohnDee">
+        <input type="text" name="twitter" value="<c:out value="${hashmap[twitter]}"/>" placeholder="<c:out value="${hashmap[twitter]}"/>">
       </div>
     </div>
     <div class="two wide field">
       <label>Skype</label>
       <div class="ui left labeled input">
         <div class="ui label"><i class="skype icon"></i></div>
-        <input type="text" name="skype" placeholder="JohnDee">
+        <input type="text" name="skype" value="<c:out value="${hashmap[skype]}"/>" placeholder="<c:out value="${hashmap[skype]}"/>">
       </div>
     </div>
 
      <div class="three wide field">
       <label>Email (Personal)</label>
-        <input type="text"  name="emailpersonal" placeholder="John@gmail.com">
+        <input type="text"  name="emailpersonal" value="<c:out value="${hashmap[emailpersonal]}"/>" placeholder="<c:out value="${hashmap[emailpersonal]}"/>">
     </div>
     <div class="three wide field">
       <label>Email (Business)</label>
-        <input type="text" name="emailbusiness" placeholder="John@office.com">
+        <input type="text" name="emailbusiness" value="<c:out value="${hashmap[emailbusiness]}"/>" placeholder="<c:out value="${hashmap[emailbusiness]}"/>">
     </div>
     <div class="three wide field">
       <label>Website</label>
-        <input type="text" name="website" placeholder="http://mysite.com">
+        <input type="text" name="website" value="<c:out value="${hashmap[website]}"/>" placeholder="<c:out value="${hashmap[website]}"/>">
     </div>
 
 

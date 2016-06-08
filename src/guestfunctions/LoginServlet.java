@@ -1,5 +1,6 @@
 package guestfunctions;
 
+import dao.datastoreDAO;
 import dao.userDAO;
 import platform.User;
 
@@ -17,6 +18,7 @@ import java.util.ArrayList;
  */
 public class LoginServlet extends HttpServlet {
     private dao.userDAO userdao;
+    private dao.datastoreDAO datastore;
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -33,6 +35,8 @@ public class LoginServlet extends HttpServlet {
         if(userdao.isRegistered(u)){
             req.getSession().setAttribute("loggedUser", u);
             req.getSession().setAttribute("uid", userdao.getUID(u));
+            u.setUID(userdao.getUID(u));
+
             System.out.println("User "+u.getUsername()+" / UID: "+userdao.getUID(u));
             System.out.println("Succesfully logged in!");
         }
@@ -46,5 +50,7 @@ public class LoginServlet extends HttpServlet {
 
     public void init()  throws ServletException{
         userdao = new userDAO();
+        datastore = new datastoreDAO();
+
     }
 }
