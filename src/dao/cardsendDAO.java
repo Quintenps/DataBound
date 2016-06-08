@@ -16,10 +16,8 @@ public class cardsendDAO extends baseDAO {
         try (Connection con = super.getConnection()) {
 
             String cardname = cn;
-            int receiveuid = rcuid;
-            int sessionid = sesid;
 
-            if (!hasCard(rcuid)) {
+            if (!hasCard(rcuid, sesid)) {
                 PreparedStatement statement = con.prepareStatement("INSERT INTO cardshare VALUES (?,?,?)");
 
                 statement.setInt(1, sesid);
@@ -34,17 +32,17 @@ public class cardsendDAO extends baseDAO {
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
     }
 
-        public boolean hasCard(int uid) {
+        public boolean hasCard(int receiveuid, int myuid) {
 
 
         boolean hasCard = true;
-        int GetUid = uid;
 
         try (Connection con = super.getConnection()) {
 
-            PreparedStatement statement = con.prepareStatement("SELECT cardname FROM cardshare WHERE receiveduser=?");
+            PreparedStatement statement = con.prepareStatement("SELECT cardname FROM cardshare WHERE receiveduser=? AND userid=? ");
 
-            statement.setInt(1, GetUid);
+            statement.setInt(1, receiveuid);
+            statement.setInt(2, myuid);
 
             System.out.println(statement.toString()); // DEBUG
             ResultSet sqlresult = statement.executeQuery();

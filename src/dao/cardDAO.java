@@ -4,7 +4,9 @@ import platform.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 /**
  * Created by 187z on 6/7/2016.
@@ -262,6 +264,59 @@ public class cardDAO extends baseDAO {
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
+    }
+
+
+    public HashMap<Integer, String> selectAllData(User user, String cn) {
+        HashMap<Integer, String> datafields = new HashMap();
+        int uid = user.getUID();
+        String cardname = cn;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM cards WHERE userid=? AND cardname=?");
+            statement.setInt(1, uid);
+            statement.setString(2, cn);
+
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+
+            while(sqlresult.next()) {
+                String firstname = sqlresult.getString("firstname");
+                String middlename = sqlresult.getString("middlename");
+                String lastname = sqlresult.getString("lastname");
+                String gender = sqlresult.getString("gender");
+                String dateofbirth = sqlresult.getString("dateofbirth");
+                String country = sqlresult.getString("country");
+                String city = sqlresult.getString("city");
+                String town = sqlresult.getString("town");
+                String facebook = sqlresult.getString("facebook");
+                String twitter = sqlresult.getString("twitter");
+                String skype = sqlresult.getString("skype");
+                String emailpersonal = sqlresult.getString("emailpersonal");
+                String emailbusiness = sqlresult.getString("emailbusiness");
+                String website = sqlresult.getString("website");
+
+                datafields.put(1, firstname);
+                datafields.put(2, middlename);
+                datafields.put(3, lastname);
+                datafields.put(4, gender);
+                datafields.put(5, dateofbirth);
+                datafields.put(6, country);
+                datafields.put(7, city);
+                datafields.put(8, town);
+                datafields.put(9, facebook);
+                datafields.put(10, twitter);
+                datafields.put(11, skype);
+                datafields.put(12, emailpersonal);
+                datafields.put(13, emailbusiness);
+                datafields.put(14, website);
+            }
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return datafields;
     }
 
 }

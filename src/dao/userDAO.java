@@ -72,6 +72,26 @@ public class userDAO extends baseDAO {
         return isRegistered;
     }
 
+    public String getName(int uid) {
+
+        int GetUid = uid;
+        String name = null;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT username FROM user WHERE userid=?");
+            statement.setInt(1, GetUid);
+
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+            sqlresult.next();
+            name = sqlresult.getString("username");
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+        return name;
+    }
+
     public User registerUser(User user) {
 
         try (Connection con = super.getConnection()) {
@@ -145,6 +165,8 @@ public class userDAO extends baseDAO {
 
         return uid;
     }
+
+
 
 
 }

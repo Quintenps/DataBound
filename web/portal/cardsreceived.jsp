@@ -1,3 +1,8 @@
+<%@ page import="platform.User" %>
+<%@ page import="dao.cardreceivedDAO" %>
+<%@ page import="dao.datastoreDAO" %>
+<%@ page import="dao.userDAO" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +69,7 @@
     </style>
 </head>
 <body class="Site">
-<?php include 'includes/menu.php'; ?>
+<jsp:include page="includes/menu.jsp" />
 <main class="Site-content">
     <div class="ui main container">
 
@@ -79,56 +84,43 @@
             </div>
         </div>
 <br /><br />
+        <div class='ui massive middle aligned divided list'>
+        <%
+            User person = (User)session.getAttribute("loggedUser");
+            int uid = (Integer) session.getAttribute("uid");
+
+            cardreceivedDAO cardreceiveddao = new cardreceivedDAO();
+            datastoreDAO datastoredao = new datastoreDAO();
+            userDAO userdao = new userDAO();
 
 
-<div class="ui massive middle aligned divided list">
-  <?php 
+            HashMap<Integer, String> cardAccess = cardreceiveddao.cardAccess(uid);
 
-  $names = array(
-    'Christopher',
-    'Ryan',
-    'Ethan',
-    'John',
-    'Zoey',
-    'Sarah',
-    'Michelle',
-    'Samantha',
-);
- 
-$surnames = array(
-    'Walker',
-    'Thompson',
-    'Anderson',
-    'Johnson',
-    'Tremblay',
-    'Peltier',
-    'Cunningham',
-    'Simpson',
-    'Mercado',
-    'Sellers'
-);
+            Set set = cardAccess.entrySet();
+            Iterator iterator = set.iterator();
+            while(iterator.hasNext()) {
+                Map.Entry mentry = (Map.Entry) iterator.next();
+                int mentryUID = Integer.parseInt(mentry.getKey().toString());
+                out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getKey()+"</div><a class='ui blue label'><i class='arrow down icon'></i> "+mentry.getValue()+"</a></div>");
+                out.println("<img class='ui avatar image' src='https://api.adorable.io/avatars/128/.'.rand(1,50000).'@adorable.io.png'> <div class='content'>"+userdao.getName(mentryUID)+"</div></div>");
+            }
+
+            Object headermsg = request.getAttribute("headermsg");
+            Object bodymsg = request.getAttribute("bodymsg");
+
+            pageContext.setAttribute("hmapCards", cardAccess);
 
 
-$i = 1;
-  while($i < 5){
-    $random_name = $names[mt_rand(0, sizeof($names) - 1)];
-    $random_surname = $surnames[mt_rand(0, sizeof($surnames) - 1)];
-    echo '
-  <div class="item">
-      <div class="right floated content">
-      <a class="ui blue label"><i class="arrow up icon"></i> PublicCard</a>
-          <a class="ui blue label"><i class="arrow down icon"></i> PublicCard</a>
-          <a class="ui green label"><i class="arrow down icon"></i> UnknownCard</a>
-      </div>
+        %>
+</div>
 
-    <img class="ui avatar image" src="https://api.adorable.io/avatars/128/.'.rand(1,50000).'@adorable.io.png">
-    <div class="content">
-      '.$random_name . ' ' . $random_surname.'
-    </div>
+
+
+
     <div class="ui modal">
   <i class="close icon"></i>
   <div class="header">
-    Quinten\'s public card
+    Quinten's public card
   </div>
   <div class="image content">
     <div class="description">
@@ -155,9 +147,7 @@ $i = 1;
     </div>
   </div>
 </div>
-  </div>';
-$i++;} ?>
-
+  </div>
 </div>
 <script>
 $(".blue").click(function(){
