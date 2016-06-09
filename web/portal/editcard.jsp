@@ -142,7 +142,7 @@
 
   <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" tabindex="0" name="firstname" value="<c:out value="${chmap[firstname]}"/>" class="hidden">
+      <input type="checkbox" tabindex="0" name="firstname" id="<c:out value="${chmap[firstname]}"/>" value="<c:out value="${hashmap[firstname]}"/>" class="hidden">
       <label>First name</label>
     </div>
     <div class="ui left pointing label"><c:out value="${hashmap[firstname]}"/></div>
@@ -150,7 +150,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="middlename" value="<c:out value="${chmap[middlename]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="middlename" id="<c:out value="${chmap[middlename]}"/>"  value="<c:out value="${hashmap[middlename]}"/>" tabindex="0" class="hidden">
       <label>Middle name</label>
     </div>
     <div class="ui left pointing label"><c:out value="${hashmap[middlename]}"/></div>
@@ -158,7 +158,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="lastname" value="<c:out value="${chmap[lastname]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="lastname" id="<c:out value="${chmap[lastname]}"/>"  value="<c:out value="${hashmap[lastname]}"/>" tabindex="0" class="hidden">
       <label>Last name</label>
     </div>
     <div class="ui left pointing label"><c:out value="${hashmap[lastname]}"/></div>
@@ -166,7 +166,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="gender" value="<c:out value="${chmap[gender]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="gender" id="<c:out value="${chmap[gender]}"/>"  value="<c:out value="${hashmap[gender]}"/>" tabindex="0" class="hidden">
       <label>Gender</label>
     </div>
     <div class="ui left pointing label"><c:out value="${hashmap[gender]}"/></div>
@@ -174,7 +174,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="dateofbirth" value="<c:out value="${chmap[dateofbirth]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="dateofbirth" id="<c:out value="${chmap[dateofbirth]}"/>"  value="<c:out value="${hashmap[dateofbirth]}"/>" tabindex="0" class="hidden">
       <label>Date of Birth</label>
     </div>
     <div class="ui left pointing label"><c:out value="${hashmap[dateofbirth]}"/></div>
@@ -187,7 +187,7 @@
 
   <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="emailpersonal" value="<c:out value="${chmap[emailpersonal]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="emailpersonal" id="<c:out value="${chmap[emailbusiness]}"/>"  value="<c:out value="${hashmap[emailpersonal]}"/>" tabindex="0" class="hidden">
       <label>Email personal</label>
     </div>
       <div class="ui left pointing label"><c:out value="${hashmap[emailpersonal]}"/></div>
@@ -195,7 +195,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="emailbusiness" value="<c:out value="${chmap[emailbusiness]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="emailbusiness" id="<c:out value="${chmap[emailbusiness]}"/>"  value="<c:out value="${hashmap[emailbusiness]}"/>" tabindex="0" class="hidden">
       <label>Email business</label>
     </div>
         <div class="ui left pointing label"><c:out value="${hashmap[emailbusiness]}"/></div>
@@ -203,7 +203,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="website" value="<c:out value="${chmap[website]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="website" id="<c:out value="${chmap[website]}"/>"  value="<c:out value="${hashmap[website]}"/>" tabindex="0" class="hidden">
       <label>Website URL</label>
     </div>
         <div class="ui left pointing label"><c:out value="${hashmap[website]}"/></div>
@@ -211,7 +211,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="facebook" value="<c:out value="${chmap[facebook]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="facebook" id="<c:out value="${chmap[facebook]}"/>"  value="<c:out value="${hashmap[facebook]}"/>" tabindex="0" class="hidden">
       <label>Facebook URL</label>
     </div>
         <div class="ui left pointing label"><c:out value="${hashmap[facebook]}"/></div>
@@ -219,7 +219,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="twitter" value="<c:out value="${chmap[twitter]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="twitter" id="<c:out value="${chmap[twitter]}"/>"  value="<c:out value="${hashmap[twitter]}"/>" tabindex="0" class="hidden">
       <label>Twitter</label>
     </div>
         <div class="ui left pointing label"><c:out value="${hashmap[twitter]}"/></div>
@@ -227,7 +227,7 @@
 
     <div class="inline field">
     <div class="ui toggle checkbox">
-      <input type="checkbox" name="skype" value="<c:out value="${chmap[skype]}"/>" tabindex="0" class="hidden">
+      <input type="checkbox" name="skype" id="<c:out value="${chmap[skype]}"/>"  value="<c:out value="${hashmap[skype]}"/>" tabindex="0" class="hidden">
       <label>Skype</label>
     </div>
         <div class="ui left pointing label"><c:out value="${hashmap[skype]}"/></div>
@@ -294,7 +294,7 @@ $(function(){
     });
 });
 
-$('.toggle > :checkbox').each(function(){ if($(this).attr('value') != ""){ $(this).click(); } });
+$('.toggle > :checkbox').each(function(){ if($(this).attr('id') != ""){ $(this).click(); } });
 
 </script>
 
