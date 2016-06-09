@@ -295,7 +295,7 @@ $(function(){
 });
 
 $('.toggle > :checkbox').each(function(){ if($(this).attr('id') != ""){ $(this).click(); } });
-
+$('.toggle > :checkbox').click(function(){ if($(this).attr('id') != ""){ $(this).attr(); } });
 </script>
 
 

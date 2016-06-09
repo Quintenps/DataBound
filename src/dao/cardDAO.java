@@ -17,16 +17,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set firstname=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET firstname=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -35,18 +40,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn;
-            String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set middlename=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (datafield != null || !datafield.isEmpty() || datafield.length() != 0 || !datafield.equals("") || org.apache.commons.lang3.StringUtils.isBlank(datafield)) {
-                System.out.println("Hey!");
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET middlename=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
     }
@@ -54,16 +62,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set lastname=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET lastname=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
     }
@@ -71,20 +84,17 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn;
-
-            int sessionid = sesid;
-
             if(df == null){
-                PreparedStatement statement = con.prepareStatement("UPDATE cards set WEBSITE=NULL WHERE userid=? AND cardname=?");
-                statement.setInt(1, sessionid);
-                statement.setString(2, cardname);
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set gender=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
             }
 
             else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET gender=? WHERE userid=? AND cardname=?");
                 statement.setString(1, df);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
@@ -94,18 +104,23 @@ public class cardDAO extends baseDAO {
     }
     public void updateDateOfBirth(String cn, String df, int sesid) {
 
-        try (Connection con = super.getConnection()) {
+            try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+                if(df == null){
+                    PreparedStatement statement = con.prepareStatement("UPDATE cards set dateofbirth=NULL WHERE userid=? AND cardname=?");
+                    statement.setInt(1, sesid);
+                    statement.setString(2, cn);
+                }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
-                PreparedStatement statement = con.prepareStatement("UPDATE cards SET dateofbirth=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
-            }
+                else if (!df.equals("")) {
+                    PreparedStatement statement = con.prepareStatement("UPDATE cards SET dateofbirth=? WHERE userid=? AND cardname=?");
+                    statement.setString(1, df);
+                    statement.setInt(2, sesid);
+                    statement.setString(3, cn);
+                    System.out.println(statement.executeUpdate());
+                    System.out.println("Cards updated!");
+                }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -132,16 +147,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set city=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET city=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -150,16 +170,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set town=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET town=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -168,16 +193,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set facebook=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET facebook=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -186,16 +216,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set twitter=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET twitter=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -204,34 +239,45 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set skype=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET skype=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
     }
     public void updateEmailPersonal(String cn, String df, int sesid) {
 
-        try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            try (Connection con = super.getConnection()) {
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
-                PreparedStatement statement = con.prepareStatement("UPDATE cards SET emailpersonal=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
-            }
+                if(df == null){
+                    PreparedStatement statement = con.prepareStatement("UPDATE cards set emailpersonal=NULL WHERE userid=? AND cardname=?");
+                    statement.setInt(1, sesid);
+                    statement.setString(2, cn);
+                }
+
+                else if (!df.equals("")) {
+                    PreparedStatement statement = con.prepareStatement("UPDATE cards SET emailersonal=? WHERE userid=? AND cardname=?");
+                    statement.setString(1, df);
+                    statement.setInt(2, sesid);
+                    statement.setString(3, cn);
+                    System.out.println(statement.executeUpdate());
+                    System.out.println("Cards updated!");
+                }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
@@ -240,13 +286,17 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set emailbusiness=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET emailbusiness=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
@@ -258,22 +308,21 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
-
-            if(datafield.equals("NULL")){
-                PreparedStatement statement = con.prepareStatement("UPDATE cards set WEBSITE=NULL WHERE userid=? AND cardname=?");
-                statement.setInt(1, sessionid);
-                statement.setString(2, cardname);
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set website=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
             }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET website=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
             }
+
 
 
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
