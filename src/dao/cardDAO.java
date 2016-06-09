@@ -71,12 +71,19 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
+            String cardname = cn;
+
             int sessionid = sesid;
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set WEBSITE=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sessionid);
+                statement.setString(2, cardname);
+            }
+
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET gender=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
+                statement.setString(1, df);
                 statement.setInt(2, sessionid); statement.setString(3, cardname);
                 System.out.println(statement.executeUpdate());
                 System.out.println("Cards updated!");
@@ -253,6 +260,12 @@ public class cardDAO extends baseDAO {
 
             String cardname = cn; String datafield = df;
             int sessionid = sesid;
+
+            if(datafield.equals("NULL")){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set WEBSITE=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sessionid);
+                statement.setString(2, cardname);
+            }
 
             if (!datafield.equals("") || !datafield.equals(null)) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET website=? WHERE userid=? AND cardname=?");

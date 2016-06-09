@@ -24,7 +24,7 @@ public class Cards extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        String cardname = req.getParameter("cardname");
+        String cardname  = req.getParameter("cardname");
         String firstname = req.getParameter("firstname");
         String middlename = req.getParameter("middlename");
         String lastname = req.getParameter("lastname");
@@ -40,7 +40,6 @@ public class Cards extends HttpServlet {
         String emailpersonal = req.getParameter("emailpersonal");
         String emailbusiness = req.getParameter("emailbusiness");
         String website = req.getParameter("website");
-
 
         hmap.put(1, firstname);
         hmap.put(2, middlename);
