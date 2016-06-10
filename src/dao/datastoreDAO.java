@@ -26,14 +26,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET firstname=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -44,14 +44,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET middlename=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -61,14 +61,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET lastname=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -78,14 +78,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET gender=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -96,14 +96,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET dateofbirth=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -114,14 +114,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET country=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -132,14 +132,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET city=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -150,14 +150,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET town=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -168,14 +168,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET facebook=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -186,14 +186,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET twitter=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -204,14 +204,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET skype=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -222,14 +222,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET emailpersonal=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -240,14 +240,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET emailbusiness=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 
@@ -258,14 +258,14 @@ public class datastoreDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String datafield = df;
-            int sessionid = sesid;
+            
+            
 
-            if (!datafield.equals("")) {
+            if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE datastore SET website=? WHERE userid=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid);
-                System.out.println(statement.executeUpdate());
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.executeUpdate();
                 System.out.println("Cards updated!");
             }
 

@@ -21,6 +21,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set firstname=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -28,8 +29,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -44,6 +45,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set middlename=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -51,8 +53,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -66,6 +68,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set lastname=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -73,8 +76,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -88,6 +91,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set gender=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -95,8 +99,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -110,6 +114,7 @@ public class cardDAO extends baseDAO {
                     PreparedStatement statement = con.prepareStatement("UPDATE cards set dateofbirth=NULL WHERE userid=? AND cardname=?");
                     statement.setInt(1, sesid);
                     statement.setString(2, cn);
+                    statement.executeUpdate();
                 }
 
                 else if (!df.equals("")) {
@@ -117,8 +122,8 @@ public class cardDAO extends baseDAO {
                     statement.setString(1, df);
                     statement.setInt(2, sesid);
                     statement.setString(3, cn);
-                    System.out.println(statement.executeUpdate());
-                    System.out.println("Cards updated!");
+                    statement.executeUpdate();
+                    System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
                 }
 
 
@@ -129,15 +134,20 @@ public class cardDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            String cardname = cn; String datafield = df;
-            int sessionid = sesid;
+            if(df == null){
+                PreparedStatement statement = con.prepareStatement("UPDATE cards set country=NULL WHERE userid=? AND cardname=?");
+                statement.setInt(1, sesid);
+                statement.setString(2, cn);
+                statement.executeUpdate();
+            }
 
-            if (!datafield.equals("") || !datafield.equals(null)) {
+            else if (!df.equals("")) {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards SET country=? WHERE userid=? AND cardname=?");
-                statement.setString(1, datafield);
-                statement.setInt(2, sessionid); statement.setString(3, cardname);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.setString(1, df);
+                statement.setInt(2, sesid);
+                statement.setString(3, cn);
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -151,6 +161,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set city=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -158,8 +169,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -174,6 +185,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set town=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -181,8 +193,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -197,6 +209,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set facebook=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -204,8 +217,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -220,6 +233,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set twitter=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -227,8 +241,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -243,6 +257,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set skype=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -250,8 +265,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -267,6 +282,7 @@ public class cardDAO extends baseDAO {
                     PreparedStatement statement = con.prepareStatement("UPDATE cards set emailpersonal=NULL WHERE userid=? AND cardname=?");
                     statement.setInt(1, sesid);
                     statement.setString(2, cn);
+                    statement.executeUpdate();
                 }
 
                 else if (!df.equals("")) {
@@ -274,8 +290,8 @@ public class cardDAO extends baseDAO {
                     statement.setString(1, df);
                     statement.setInt(2, sesid);
                     statement.setString(3, cn);
-                    System.out.println(statement.executeUpdate());
-                    System.out.println("Cards updated!");
+                    statement.executeUpdate();
+                    System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
                 }
 
 
@@ -290,6 +306,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set emailbusiness=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -297,8 +314,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 
@@ -312,6 +329,7 @@ public class cardDAO extends baseDAO {
                 PreparedStatement statement = con.prepareStatement("UPDATE cards set website=NULL WHERE userid=? AND cardname=?");
                 statement.setInt(1, sesid);
                 statement.setString(2, cn);
+                statement.executeUpdate();
             }
 
             else if (!df.equals("")) {
@@ -319,8 +337,8 @@ public class cardDAO extends baseDAO {
                 statement.setString(1, df);
                 statement.setInt(2, sesid);
                 statement.setString(3, cn);
-                System.out.println(statement.executeUpdate());
-                System.out.println("Cards updated!");
+                statement.executeUpdate();
+                System.out.println("Card succesfully updated! Applied '"+ df +"' to "+ cn +" on userid "+ sesid );
             }
 
 

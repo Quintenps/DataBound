@@ -108,7 +108,7 @@ public class Cards extends HttpServlet {
 
         }
 
-        RequestDispatcher rd = req.getRequestDispatcher("/portal/editcard.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/portal/cards.jsp");
 
 
 

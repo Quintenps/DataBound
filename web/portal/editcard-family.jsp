@@ -77,7 +77,7 @@
     datastoreDAO datastoredao = new datastoreDAO();
     cardDAO carddao = new cardDAO();
     HashMap<Integer, String> allData = datastoredao.selectAllData(person);
-    HashMap<Integer, String> allCardData = carddao.selectAllData(person, "BusinessCard");
+    HashMap<Integer, String> allCardData = carddao.selectAllData(person, "FamilyCard");
 
     Object headermsg = request.getAttribute("headermsg");
     Object bodymsg = request.getAttribute("bodymsg");
@@ -120,7 +120,7 @@
 <br /><br />
 
 <div class="ui grid row stackable">
-<h1>Editing: Business card</h1>
+<h1>Editing: Family card</h1>
 </div><br /><br />
         <%
 
@@ -180,6 +180,30 @@
     <div class="ui left pointing label"><c:out value="${hashmap[dateofbirth]}"/></div>
   </div>
 
+<div class="inline field">
+    <div class="ui toggle checkbox">
+        <input type="checkbox" name="country" id="<c:out value="${chmap[country]}"/>"  value="<c:out value="${hashmap[country]}"/>" tabindex="0" class="hidden">
+        <label>Country</label>
+    </div>
+    <div class="ui left pointing label"><c:out value="${hashmap[country]}"/></div>
+</div>
+
+<div class="inline field">
+    <div class="ui toggle checkbox">
+        <input type="checkbox" name="city" id="<c:out value="${chmap[city]}"/>"  value="<c:out value="${hashmap[city]}"/>" tabindex="0" class="hidden">
+        <label>City</label>
+    </div>
+    <div class="ui left pointing label"><c:out value="${hashmap[city]}"/></div>
+</div>
+
+<div class="inline field">
+    <div class="ui toggle checkbox">
+        <input type="checkbox" name="town" id="<c:out value="${chmap[town]}"/>"  value="<c:out value="${hashmap[town]}"/>" tabindex="0" class="hidden">
+        <label>Town</label>
+    </div>
+    <div class="ui left pointing label"><c:out value="${hashmap[town]}"/></div>
+</div>
+
 </div>
 <br /><br />
 <div class="ui form">
@@ -233,7 +257,7 @@
         <div class="ui left pointing label"><c:out value="${hashmap[skype]}"/></div>
   </div>
 
-    <input type="hidden" name="cardname" value="BusinessCard">
+    <input type="hidden" name="cardname" value="FamilyCard">
 
 </div><br /><br />
 <button class="ui green button">Update card</button>
@@ -241,46 +265,7 @@
 <br /><br /><br /><br />
 
 
-<div class="ui middle aligned divided list ">
-  <h1>People you shared this card with</h1><br />
-  <div class="item">
-    <div class="right floated content">
-      <div class="ui button red tiny">Remove access</div>
-    </div>
-    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
-    <div class="content">
-      Lena
-    </div>
-  </div>
-  <div class="item">
-    <div class="right floated content">
-      <div class="ui button red tiny">Remove access</div>
-    </div>
-    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
-    <div class="content">
-      Lindsay
-    </div>
-  </div>
-  <div class="item">
-    <div class="right floated content">
-      <div class="ui button red tiny">Remove access</div>
-    </div>
-    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
-    <div class="content">
-      Mark
-    </div>
-  </div>
-  <div class="item">
-    <div class="right floated content">
-      <div class="ui button red tiny">Remove access</div>
-    </div>
-    <img class="ui avatar image" src="https://cnt.bet9ja.com/super9ja/img/login-user-icon.png">
-    <div class="content">
-      Molly
-    </div>
-  </div>
-</div>
-</div>
+
 
         
     <script>
@@ -295,7 +280,6 @@ $(function(){
 });
 
 $('.toggle > :checkbox').each(function(){ if($(this).attr('id') != ""){ $(this).click(); } });
-$('.toggle > :checkbox').click(function(){ if($(this).attr('id') != ""){ $(this).attr(); } });
 </script>
 
 

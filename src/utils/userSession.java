@@ -19,7 +19,7 @@ public class userSession implements javax.servlet.Filter {
                          FilterChain chain) throws IOException, ServletException {
         HttpServletRequest r2 = (HttpServletRequest) req;
         if (r2.getSession().getAttribute("loggedUser") == null) {
-            r2.getRequestDispatcher("/portal/login.jsp").forward(req, resp);
+            r2.getRequestDispatcher("/index.html").forward(req, resp);
         } else {
             chain.doFilter(req, resp);
         }

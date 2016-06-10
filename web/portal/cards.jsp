@@ -1,3 +1,5 @@
+<%@ page import="platform.User" %>
+<%@ page import="dao.cardreceivedDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +25,7 @@
     <link href="../dist/components/card.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/dropdown.css" rel="stylesheet" type="text/css">
     <link href="../dist/components/transition.css" rel="stylesheet" type="text/css">
+    <link href="../dist/components/message.css" rel="stylesheet" type="text/css">
     <link href="../dist/style.css" rel="stylesheet" type="text/css">
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -76,6 +79,21 @@
         </div>
 <br /><br />
 
+        <%
+            Object headermsg = request.getAttribute("headermsg");
+            Object bodymsg = request.getAttribute("bodymsg");
+
+            if (headermsg != null) {
+                out.println("<div class=\"ui positive message\">\n" +
+                        "            <i class=\"close icon\"></i>\n" +
+                        "            <div class=\"header\">\n" +headermsg+
+                        "            </div>\n" +
+                        "            <p>"+bodymsg+"</p>\n" +
+                        "        </div>");
+            }
+
+
+        %>
 <form method="post" action="/QuickSendCard.do" class="ui form stacked">
   <h2>Quick Send</h2>
   <div class="fields">
@@ -87,9 +105,9 @@
         <label>Choose card</label>
         <select class="ui dropdown" name="cardname">
           <option value="">Choose card</option>
-          <option value="FamilyCard">Personal</option>
-          <option value="BusinessCard">Business</option>
-          <option value="UnknownCard">Unknown</option>
+          <option value="FamilyCard">Family card</option>
+          <option value="BusinessCard">Business card</option>
+          <option value="UnknownCard">Public card</option>
         </select>
     </div>
     <div class="field">
@@ -106,32 +124,35 @@ $('select.dropdown')
 ;
 </script>
 
+
+        <%
+            User person = (User)session.getAttribute("loggedUser");
+            cardreceivedDAO cardreceivedao = new cardreceivedDAO();
+
+        %>
+
 <h2>My Cards</h2>
 <div class="ui link centered cards">
- <a class="card" href="editcard.jsp">
+ <a class="card" href="/portal/editcard-family.jsp">
     <div class="image">
-      <img src="images/friendscard.jpg">
+      <img src="/portal/images/familycard.jpg">
     </div>
     <div class="content">
-      <div class="header">Personal card</div>
+      <div class="header">Family card</div>
       <div class="meta">
         <span class="date">Used for friends</span>
       </div>
     </div>
     <div class="extra content">
-      <span class="right floated">
-        Last edit: 2 may 2016
-      </span>
       <span>
-        <i class="unhide icon"></i>
-        35 shares
+        <i class="unhide icon"></i><% out.println(cardreceivedao.cardShareCount(person.getUID(),"FamilyCard")); %>
       </span>
     </div>
   </a>
 
- <a class="card" href="editcard.jsp">
+ <a class="card" href="/portal/editcard-business.jsp">
     <div class="image">
-      <img src="images/businesscard.jpg">
+      <img src="/portal/images/businesscard.jpg">
     </div>
     <div class="content">
       <div class="header">Business card</div>
@@ -140,19 +161,15 @@ $('select.dropdown')
       </div>
     </div>
     <div class="extra content">
-      <span class="right floated">
-        Last edit: 2 may 2016
-      </span>
       <span>
-        <i class="unhide icon"></i>
-        92 shares
+        <i class="unhide icon"></i><% out.println(cardreceivedao.cardShareCount(person.getUID(),"BusinessCard")); %>
       </span>
     </div>
   </a>
 
-   <a class="card" href="editcard.jsp">
+   <a class="card" href="/portal/editcard-public.jsp">
     <div class="image">
-      <img src="images/publiccard.jpg">
+      <img src="/portal/images/publiccard.jpg">
     </div>
     <div class="content">
       <div class="header">Public card</div>
@@ -161,12 +178,8 @@ $('select.dropdown')
       </div>
     </div>
     <div class="extra content">
-      <span class="right floated">
-        Last edit: 22 may 2016
-      </span>
       <span>
-        <i class="unhide icon"></i>
-        241 shares
+        <i class="unhide icon"></i><% out.println(cardreceivedao.cardShareCount(person.getUID(),"UnknownCard")); %>
       </span>
     </div>
   </a>

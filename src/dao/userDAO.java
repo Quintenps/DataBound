@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+import java.util.HashMap;
 
 /**
  * Created by 187z on 6/6/2016.
@@ -166,7 +167,28 @@ public class userDAO extends baseDAO {
         return uid;
     }
 
+    public HashMap<Integer, String> selectAllUsers() {
+        HashMap<Integer, String> users = new HashMap();
 
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT userid, username FROM user");
+
+            statement.toString(); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+
+            while(sqlresult.next()) {
+                int userid = sqlresult.getInt("userid");
+                String username = sqlresult.getString("username");
+                users.put(userid, username );
+            }
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return users;
+    }
 
 
 }

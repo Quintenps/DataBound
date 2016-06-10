@@ -41,4 +41,30 @@ public class cardreceivedDAO extends baseDAO {
 
         return receivedCardAccess;
     }
+
+    public String cardShareCount(int uid, String cn) {
+        int CSC = 0;
+        String CSCF = "0";
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT count(userid) AS total FROM cardshare WHERE userid=? AND cardname=?");
+            statement.setInt(1, uid);
+            statement.setString(2, cn);
+
+            ResultSet cardAccess = statement.executeQuery();
+            cardAccess.next();
+            CSC = cardAccess.getInt("total");
+            CSCF = Integer.toString(CSC);
+
+
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return CSCF;
+    }
+
+
+
 }
