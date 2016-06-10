@@ -16,7 +16,7 @@
                         "item" href="/portal/userlisting.jsp">User listing</a> <a class="item" href=
                         "/portal/cards.jsp">Send card</a>
                         <div class="divider"></div><a class="item" href=
-                        "/portal/settings.jsp">Settings</a> <a class="item" href="../index.html">Logout</a>
+                        "/portal/settings.jsp">Settings</a> <button class="item" formmethod="post" formaction="/LogoutServlet.do" >Logout</button>
                     </div>
                 </div>
             </div>

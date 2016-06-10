@@ -286,7 +286,7 @@ public class cardDAO extends baseDAO {
                 }
 
                 else if (!df.equals("")) {
-                    PreparedStatement statement = con.prepareStatement("UPDATE cards SET emailersonal=? WHERE userid=? AND cardname=?");
+                    PreparedStatement statement = con.prepareStatement("UPDATE cards SET emailpersonal=? WHERE userid=? AND cardname=?");
                     statement.setString(1, df);
                     statement.setInt(2, sesid);
                     statement.setString(3, cn);
@@ -359,6 +359,56 @@ public class cardDAO extends baseDAO {
             statement.setString(2, cn);
 
             System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+
+            while(sqlresult.next()) {
+                String firstname = sqlresult.getString("firstname");
+                String middlename = sqlresult.getString("middlename");
+                String lastname = sqlresult.getString("lastname");
+                String gender = sqlresult.getString("gender");
+                String dateofbirth = sqlresult.getString("dateofbirth");
+                String country = sqlresult.getString("country");
+                String city = sqlresult.getString("city");
+                String town = sqlresult.getString("town");
+                String facebook = sqlresult.getString("facebook");
+                String twitter = sqlresult.getString("twitter");
+                String skype = sqlresult.getString("skype");
+                String emailpersonal = sqlresult.getString("emailpersonal");
+                String emailbusiness = sqlresult.getString("emailbusiness");
+                String website = sqlresult.getString("website");
+
+                datafields.put(1, firstname);
+                datafields.put(2, middlename);
+                datafields.put(3, lastname);
+                datafields.put(4, gender);
+                datafields.put(5, dateofbirth);
+                datafields.put(6, country);
+                datafields.put(7, city);
+                datafields.put(8, town);
+                datafields.put(9, facebook);
+                datafields.put(10, twitter);
+                datafields.put(11, skype);
+                datafields.put(12, emailpersonal);
+                datafields.put(13, emailbusiness);
+                datafields.put(14, website);
+            }
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return datafields;
+    }
+
+    public HashMap<Integer, String> selectAllDataByUID(int uid, String cn) {
+        HashMap<Integer, String> datafields = new HashMap();
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM cards WHERE userid=? AND cardname=?");
+            statement.setInt(1, uid);
+            statement.setString(2, cn);
+
+            statement.toString(); // DEBUG
             ResultSet sqlresult = statement.executeQuery();
 
             while(sqlresult.next()) {

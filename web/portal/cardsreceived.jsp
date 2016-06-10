@@ -3,6 +3,7 @@
 <%@ page import="dao.datastoreDAO" %>
 <%@ page import="dao.userDAO" %>
 <%@ page import="java.util.*" %>
+<%@ page import="dao.cardDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +91,7 @@
             int uid = (Integer) session.getAttribute("uid");
 
             cardreceivedDAO cardreceiveddao = new cardreceivedDAO();
-            datastoreDAO datastoredao = new datastoreDAO();
+            cardDAO carddao = new cardDAO();
             userDAO userdao = new userDAO();
 
 
@@ -101,8 +102,104 @@
             while(iterator.hasNext()) {
                 Map.Entry mentry = (Map.Entry) iterator.next();
                 int mentryUID = Integer.parseInt(mentry.getKey().toString());
-                out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getKey()+"</div><a class='ui blue label'><i class='arrow down icon'></i> "+mentry.getValue()+"</a></div>");
-                out.println("<img class='ui avatar image' src='https://api.adorable.io/avatars/128/.'.rand(1,50000).'@adorable.io.png'> <div class='content'>"+userdao.getName(mentryUID)+"</div></div>");
+                String mentryCN = mentry.getValue().toString();
+                HashMap<Integer, String> carddata = carddao.selectAllDataByUID(mentryUID, mentryCN);
+                String name = userdao.getName(mentryUID);
+
+
+
+                out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getKey()+"</div><a class='ui blue label' id='"+name+mentryCN+"'><i class='arrow down icon'></i> "+mentry.getValue()+"</a></div>");
+                out.println("<img class='ui avatar image' src='https://api.adorable.io/avatars/128/"+name+"'@adorable.io.png'> <div class='content'>"+name+"</div></div>");
+                out.println("<div class=\"ui modal\" id="+name+mentryCN+">\n" +
+                        "  <i class=\"close icon\"></i>\n" +
+                        "  <div class=\"header\">\n" +
+                        "    "+name+"'s "+ mentryCN +"\n" +
+                        "  </div>\n" +
+                        "  <div class=\"image content\">\n" +
+                        "    <div class=\"description\">\n" +
+                        "<div class=\"ui list\">\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"user icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(1)+ " " +carddata.get(2)+ " " +carddata.get(3)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"heterosexual icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(4)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"birthday icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(5)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"flag icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(6)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"location arrow icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(7)+", "+carddata.get(8)+", "+carddata.get(9)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"facebook icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(10)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"twitter icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(11)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"skype icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(12)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"mail icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(13)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"suitcase icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(14)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"share alternate icon\"></i>\n" +
+                        "    <div class=\"content\">\n" +
+                        "      "+carddata.get(15)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "</div>\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+                        "</div>");
             }
 
             Object headermsg = request.getAttribute("headermsg");
@@ -112,46 +209,12 @@
 
 
         %>
-</div>
 
-
-
-
-    <div class="ui modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Quinten's public card
-  </div>
-  <div class="image content">
-    <div class="description">
-<div class="ui list">
-  <div class="item">
-    <i class="users icon"></i>
-    <div class="content">
-      Quinten Roelof Peels
-    </div>
-  </div>
-  <div class="item">
-    <i class="marker icon"></i>
-    <div class="content">
-      The Netherlands, Utrecht, Houten
-    </div>
-  </div>
-  <div class="item">
-    <i class="mail icon"></i>
-    <div class="content">
-      <a href="mailto:#">Quinten@Peels.me</a>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
 <script>
 $(".blue").click(function(){
-$('.ui.modal').modal('show');
+    var thisCard = $(this).attr('id');
+    console.log(this);
+    $('.modal#'+thisCard+'').modal('show');
 });
 </script>
 
