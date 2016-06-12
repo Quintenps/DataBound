@@ -22,6 +22,7 @@ public class RegisterServlet extends HttpServlet {
         String username = req.getParameter("username");
         String passwd = req.getParameter("password");
 
+
         RequestDispatcher rd = null;
 
 

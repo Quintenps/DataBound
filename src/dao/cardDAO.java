@@ -449,4 +449,42 @@ public class cardDAO extends baseDAO {
         return datafields;
     }
 
+    public int totalSharedCards(int userid) {
+        int total = 0;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT count(userid) as total FROM cardshare WHERE userid=?");
+            statement.setInt(1, userid);
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+            sqlresult.next();
+            total = sqlresult.getInt("total");
+
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return total;
+    }
+
+    public int totalReceivedCards(int userid) {
+        int total = 0;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT count(receiveduser) as total FROM cardshare WHERE receiveduser=?");
+            statement.setInt(1, userid);
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+            sqlresult.next();
+            total = sqlresult.getInt("total");
+
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return total;
+    }
+
 }

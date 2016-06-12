@@ -18,6 +18,7 @@ public class User {
     public User(String uname, String pw){
         username = uname;
         password = pw;
+
     }
 
 

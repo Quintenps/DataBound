@@ -1,3 +1,8 @@
+<%@ page import="platform.User" %>
+<%@ page import="dao.userDAO" %>
+<%@ page import="dao.datastoreDAO" %>
+<%@ page import="dao.cardDAO" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +38,9 @@
     "text/css">
     <link href="../dist/components/dropdown.css" rel="stylesheet" type=
     "text/css">
+
+    <link href="../dist/components/message.css" rel="stylesheet" type=
+            "text/css">
     <link href="../dist/components/icon.css" rel="stylesheet" type="text/css">
     <style type="text/css">
     body {
@@ -55,7 +63,7 @@
 </head>
 <body class="Site">
     <header>
-        <?php include 'includes/menu.php'; ?>
+        <jsp:include page="includes/menu.jsp" />
     </header>
     <main class="Site-content">
         <div class="ui main container">
@@ -68,6 +76,26 @@
                         </div><a class="active section">Dashboard</a>
                     </div>
                 </div>
+                <%
+                    User person = (User)session.getAttribute("loggedUser");
+                    userDAO userdao = new userDAO();
+                    cardDAO carddao = new cardDAO();
+                    datastoreDAO datastoredao = new datastoreDAO();
+
+                    Object headermsg = request.getAttribute("headermsg");
+                    Object bodymsg = request.getAttribute("bodymsg");
+
+                    if (headermsg != null) {
+                        out.println("<div class=\"ui positive message\">\n" +
+                                "            <i class=\"close icon\"></i>\n" +
+                                "            <div class=\"header\">\n" +headermsg+
+                                "            </div>\n" +
+                                "            <p>"+bodymsg+"</p>\n" +
+                                "        </div>");
+                    }
+
+
+                %>
             </div><br>
             <br>
             <div class="ui grid" style="padding:25px 0px;">
@@ -75,22 +103,22 @@
                     <div class="column"></div>
                     <div class="column center aligned">
                         <img class="ui small centered circular bordered image"
-                        src="images/1_quintenpeels.jpg">
+                        src="<% out.println(userdao.getAvatarURL(person.getUID())); %>">
                         <h3>Quinten Peels</h3>
                         <p>Member since 3 may 2016</p><br>
                         <table class="ui basic celled table">
                             <tbody>
                                 <tr>
                                     <td>Used datafields</td>
-                                    <td>92</td>
+                                    <td><% out.println(datastoredao.usedDataFields(person.getUID())); %></td>
                                 </tr>
                                 <tr>
                                     <td>Cards shared</td>
-                                    <td>16</td>
+                                    <td><% out.println(carddao.totalSharedCards(person.getUID())); %></td>
                                 </tr>
                                 <tr>
                                     <td>Cards received</td>
-                                    <td>92</td>
+                                    <td><% out.println(carddao.totalReceivedCards(person.getUID())); %></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,38 +129,38 @@
             <div class="ui grid">
                 <div class="three column row">
                     <div class="column">
-                        <form class="ui form">
+                        <form class="ui form" method="post" action="/UpdateSettings.do">
                             <h3>Profile picture</h3>
                             <div class="field">
                                 <label>Avatar URL (Has to end with
-                                .jpg)</label> <input placeholder=
-                                "http://i.imgur.com/A1MnGZ7.jpg" type="text">
+                                .jpg/png/gif)</label> <input placeholder=
+                                "http://i.imgur.com/A1MnGZ7.jpg" name="avatar" type="text">
                             </div><button class="ui button green" type=
                             "submit">Update avatar</button>
                         </form>
                     </div>
                     <div class="column">
-                        <form class="ui form">
+                        <form class="ui form" method="post" action="/UpdateSettings.do">
                             <h3>Update password</h3>
                             <div class="field">
                                 <label>Current Password</label> <input name=
                                 "currentPassword" placeholder=
-                                "Current password" type="text">
+                                "Current password" type="password">
                             </div>
                             <div class="field">
                                 <label>New Password</label> <input name=
                                 "newPassword" placeholder="New password" type=
-                                "text">
+                                "password">
                             </div><button class="ui button green" type=
                             "submit">Update password</button>
                         </form>
                     </div>
                     <div class="column">
-                        <form class="ui form">
+                        <form class="ui form" method="post" action="/UpdateSettings.do">
                             <h3>Update nickname</h3>
                             <div class="field">
-                                <label>New nickname</label> <input name=
-                                "last-name" placeholder="New nickname" type=
+                                <label>Username must not have any spaces</label> <input name=
+                                "nickname" placeholder="New nickname" type=
                                 "text">
                             </div><button class="ui button green" type=
                             "submit">Update nickname</button>
@@ -143,7 +171,7 @@
         </div>
     </main>
     <footer>
-        <?php include 'includes/footer.php'; ?>
+        <jsp:include page="includes/footer.jsp" />
     </footer>
 </body>
 </html>

@@ -381,5 +381,25 @@ public class datastoreDAO extends baseDAO {
         return datafields;
     }
 
+    public int usedDataFields(int userid) {
+        int total = 0;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT count(firstname) + count(middlename) + count(lastname) + count(gender) + count(dateofbirth) + count(country) + count(city) + count(town) + count(facebook) + count(twitter) + count(skype) + count(emailpersonal) + count(emailbusiness) + count(website) as total  FROM `datastore` WHERE userid=?");
+            statement.setInt(1, userid);
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+            sqlresult.next();
+            total = sqlresult.getInt("total");
+
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return total;
+    }
+
+
 
 }

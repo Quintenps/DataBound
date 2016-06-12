@@ -35,6 +35,7 @@ public class SendCard extends HttpServlet {
             req.setAttribute("bodymsg","Data saved successfully!");
             req.setAttribute("status","positive");
             msgdao.newMsg("Card "+cardname+" has been shared with "+userdao.getName(receiveruid),(Integer) req.getSession().getAttribute("uid"),(Integer) req.getSession().getAttribute("uid"));
+            System.out.println("Card "+cardname+" has been shared with "+userdao.getName(receiveruid)+" "+ req.getSession().getAttribute("uid")+" "+req.getSession().getAttribute("uid"));
         }
         else {req.setAttribute("status","negative");req.setAttribute("headermsg","Something went wrong"); req.setAttribute("bodymsg","Something went wrong. Please doublecheck the user ID."); rd = req.getRequestDispatcher("/portal/cards.jsp"); }
 

@@ -96,7 +96,7 @@
                     Map.Entry mentry = (Map.Entry) iterator.next();
                     int mentryUID = Integer.parseInt(mentry.getKey().toString());
                     out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getKey()+"</div></div>");
-                    out.println("<img class='ui avatar image' src='https://api.adorable.io/avatars/128/"+mentry.getValue()+"@adorable.io.png'> <div class='content'>"+mentry.getValue()+"</div></div>");
+                    out.println("<img class='ui avatar image' src='"+userdao.getAvatarURL(mentryUID)+"'> <div class='content'>"+mentry.getValue()+"</div></div>");
                 }
 
             %>

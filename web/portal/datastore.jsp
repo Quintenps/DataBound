@@ -408,11 +408,11 @@
 </div>
 </div>
     <div class="three wide field">
-      <label>City</label>
+      <label>State</label>
       <input type="text" name="city" value="<c:out value="${hashmap[city]}"/>" placeholder="<c:out value="${hashmap[city]}"/>">
     </div>
     <div class="three wide field">
-      <label>Town</label>
+      <label>City</label>
       <input type="text" name="town" value="<c:out value="${hashmap[town]}"/>" placeholder="<c:out value="${hashmap[town]}"/>">
     </div>
 

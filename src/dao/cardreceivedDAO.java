@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class cardreceivedDAO extends baseDAO {
 
-    public HashMap<Integer, String> cardAccess(int uid) {
-        HashMap<Integer, String> receivedCardAccess = new HashMap<>();
+    public HashMap<String, Integer> cardAccess(int uid) {
+        HashMap<String, Integer > receivedCardAccess = new HashMap<>();
 
 
         try (Connection con = super.getConnection()) {
@@ -30,7 +30,7 @@ public class cardreceivedDAO extends baseDAO {
             while(cardAccess.next()){
                 int userid = cardAccess.getInt("userid");
                 String cardname = cardAccess.getString("cardname");
-                receivedCardAccess.put(userid, cardname);
+                receivedCardAccess.put(cardname, userid);
             }
 
 

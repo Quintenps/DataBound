@@ -73,15 +73,38 @@ public class userDAO extends baseDAO {
         return isRegistered;
     }
 
-    public String getName(int uid) {
+    public boolean equalsPassword(int uid, String passwd) {
+        boolean isPassword = true;
 
-        int GetUid = uid;
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT username FROM user WHERE userid=? AND password=?");
+            statement.setInt(1, uid);
+            statement.setString(2, passwd);
+
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+
+
+            if (!sqlresult.isBeforeFirst()){
+                System.out.println("No records found!");
+                isPassword = false;
+            }
+
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+
+        return isPassword;
+    }
+
+    public String getName(int uid) {
         String name = null;
 
         try (Connection con = super.getConnection()) {
 
             PreparedStatement statement = con.prepareStatement("SELECT username FROM user WHERE userid=?");
-            statement.setInt(1, GetUid);
+            statement.setInt(1, uid);
 
             System.out.println(statement.toString()); // DEBUG
             ResultSet sqlresult = statement.executeQuery();
@@ -93,16 +116,37 @@ public class userDAO extends baseDAO {
         return name;
     }
 
+    public String getAvatarURL(int uid) {
+                String avatar = null;
+
+        try (Connection con = super.getConnection()) {
+
+            PreparedStatement statement = con.prepareStatement("SELECT avatar FROM user WHERE userid=?");
+            statement.setInt(1, uid);
+
+            System.out.println(statement.toString()); // DEBUG
+            ResultSet sqlresult = statement.executeQuery();
+            sqlresult.next();
+            avatar = sqlresult.getString("avatar");
+
+        }catch (SQLException sqle) { sqle.printStackTrace(); }
+
+        return avatar;
+    }
+
     public User registerUser(User user) {
 
         try (Connection con = super.getConnection()) {
 
             String uname = user.getUsername();
             String passwd = user.getPassword();
+            String avatar = "https://api.adorable.io/avatars/128/"+uname+"@adorable.io.png";
 
-            PreparedStatement statement = con.prepareStatement("INSERT INTO user (username,password) VALUES (?,?) ");
+            PreparedStatement statement = con.prepareStatement("INSERT INTO user (username,password,avatar) VALUES (?,?,?) ");
             statement.setString(1, uname);
             statement.setString(2, passwd);
+            statement.setString(3, avatar);
+
             statement.executeUpdate();
             System.out.println("User "+uname+" added!");
 

@@ -66,7 +66,7 @@ public class MessageDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            PreparedStatement statement = con.prepareStatement("SELECT messageid, receive_userid FROM messages WHERE receive_userid=?");
+            PreparedStatement statement = con.prepareStatement("SELECT messageid, receive_userid FROM messages WHERE receive_userid=? ");
             statement.setInt(1, userid);
 
             System.out.println(statement.toString()); // DEBUG
@@ -90,7 +90,7 @@ public class MessageDAO extends baseDAO {
 
         try (Connection con = super.getConnection()) {
 
-            PreparedStatement statement = con.prepareStatement("SELECT * FROM messages WHERE receive_userid=? AND messageid=?");
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM messages WHERE receive_userid=? AND messageid=?  ORDER BY messageid DESC");
             statement.setInt(1, userid);
             statement.setInt(2, msgid);
 

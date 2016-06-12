@@ -95,19 +95,19 @@
             userDAO userdao = new userDAO();
 
 
-            HashMap<Integer, String> cardAccess = cardreceiveddao.cardAccess(uid);
+            HashMap<String, Integer> cardAccess = cardreceiveddao.cardAccess(uid);
 
             Set set = cardAccess.entrySet();
             Iterator iterator = set.iterator();
             while(iterator.hasNext()) {
                 Map.Entry mentry = (Map.Entry) iterator.next();
-                int mentryUID = Integer.parseInt(mentry.getKey().toString());
-                String mentryCN = mentry.getValue().toString();
+                int mentryUID = Integer.parseInt(mentry.getValue().toString());
+                String mentryCN = mentry.getKey().toString();
                 HashMap<Integer, String> carddata = carddao.selectAllDataByUID(mentryUID, mentryCN);
                 String name = userdao.getName(mentryUID);
 
-                out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getKey()+"</div><a class='ui blue label' id='"+name+mentryCN+"'><i class='arrow down icon'></i> "+mentry.getValue()+"</a></div>");
-                out.println("<img class='ui avatar image' src='https://api.adorable.io/avatars/128/"+name+"'@adorable.io.png'> <div class='content'>"+name+"</div></div>");
+                out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getValue()+"</div><a class='ui blue label' id='"+name+mentryCN+"'><i class='arrow down icon'></i> "+mentry.getKey()+"</a></div>");
+                out.println("<img class='ui avatar image' src='"+userdao.getAvatarURL(mentryUID)+"'> <div class='content'>"+name+"</div></div>");
                 out.println("<div class=\"ui modal\" id="+name+mentryCN+">\n" +
                         "  <i class=\"close icon\"></i>\n" +
                         "  <div class=\"header\">\n" +
