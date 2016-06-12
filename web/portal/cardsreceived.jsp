@@ -106,8 +106,6 @@
                 HashMap<Integer, String> carddata = carddao.selectAllDataByUID(mentryUID, mentryCN);
                 String name = userdao.getName(mentryUID);
 
-
-
                 out.println(" <div class='item'> <div class='right floated content'> <div class='ui orange label'>ID#"+mentry.getKey()+"</div><a class='ui blue label' id='"+name+mentryCN+"'><i class='arrow down icon'></i> "+mentry.getValue()+"</a></div>");
                 out.println("<img class='ui avatar image' src='https://api.adorable.io/avatars/128/"+name+"'@adorable.io.png'> <div class='content'>"+name+"</div></div>");
                 out.println("<div class=\"ui modal\" id="+name+mentryCN+">\n" +
@@ -190,7 +188,7 @@
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
-                        "    <i class=\"share alternate icon\"></i>\n" +
+                        "    <i class=\"suitcase icon\"></i>\n" +
                         "    <div class=\"content\">\n" +
                         "      "+carddata.get(15)+"\n" +
                         "    </div>\n" +

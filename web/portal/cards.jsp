@@ -82,9 +82,10 @@
         <%
             Object headermsg = request.getAttribute("headermsg");
             Object bodymsg = request.getAttribute("bodymsg");
+            Object msgstatus = request.getAttribute("status");
 
             if (headermsg != null) {
-                out.println("<div class=\"ui positive message\">\n" +
+                out.println("<div class=\"ui "+msgstatus+" message\">\n" +
                         "            <i class=\"close icon\"></i>\n" +
                         "            <div class=\"header\">\n" +headermsg+
                         "            </div>\n" +
@@ -128,7 +129,6 @@ $('select.dropdown')
         <%
             User person = (User)session.getAttribute("loggedUser");
             cardreceivedDAO cardreceivedao = new cardreceivedDAO();
-
         %>
 
 <h2>My Cards</h2>

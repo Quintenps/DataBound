@@ -1,5 +1,6 @@
 package platform;
 
+import dao.MessageDAO;
 import dao.cardDAO;
 import dao.cardDAO;
 
@@ -13,12 +14,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
 /**
+
  * Created by 187z on 6/8/2016.
  */
 public class Cards extends HttpServlet {
     private dao.cardDAO cardDAO;
+    private dao.MessageDAO msgdao;
+
     HashMap<Integer, String> hmap = new HashMap<>();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -115,7 +118,7 @@ public class Cards extends HttpServlet {
         if(2> 1){
             req.setAttribute("headermsg","Success!");
             req.setAttribute("bodymsg","Data saved successfully!");
-
+            msgdao.newMsg("Card "+cardname+" has been updated",(Integer) req.getSession().getAttribute("uid"),(Integer) req.getSession().getAttribute("uid"));
         }
 
         else {req.setAttribute("headermsg","Error!");
@@ -128,5 +131,6 @@ public class Cards extends HttpServlet {
 
     public void init()  throws ServletException{
         cardDAO = new cardDAO();
+        msgdao = new MessageDAO();
     }
 }

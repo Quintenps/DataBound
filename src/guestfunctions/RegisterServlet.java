@@ -30,10 +30,16 @@ public class RegisterServlet extends HttpServlet {
         if(!userdao.isRegistered(u)){
             userdao.registerUser(u);
             userdao.addDataStore(u);
+            req.setAttribute("headermsg","Success");
+            req.setAttribute("bodymsg","You have succesfully been registered. You can now login.");
+            req.setAttribute("status","positive");
             rd = req.getRequestDispatcher("/login.jsp");
         }
         else {
-            req.setAttribute("msgs", "User already exists!");
+            req.setAttribute("headermsg","Error");
+            req.setAttribute("bodymsg","User already registered");
+            req.setAttribute("status","negative");
+
             rd = req.getRequestDispatcher("/register.jsp");
         }
 

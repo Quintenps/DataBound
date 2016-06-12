@@ -1,5 +1,6 @@
 package platform;
 
+import dao.MessageDAO;
 import dao.datastoreDAO;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,8 @@ import java.util.*;
  */
 public class DataStore extends HttpServlet {
     private dao.datastoreDAO datastoredao;
+    private dao.MessageDAO messagedao;
+
     ArrayList<String> postedData = new ArrayList<>();
     HashMap<Integer, String> hmap = new HashMap<>();
 
@@ -118,6 +121,7 @@ public class DataStore extends HttpServlet {
         if(2> 1){
             req.setAttribute("headermsg","Success!");
             req.setAttribute("bodymsg","Data saved successfully!");
+            messagedao.newMsg("Datastore has been updated",(Integer) req.getSession().getAttribute("uid"),(Integer) req.getSession().getAttribute("uid"));
 
         }
 
@@ -130,5 +134,6 @@ public class DataStore extends HttpServlet {
 
     public void init()  throws ServletException{
         datastoredao = new datastoreDAO();
+        messagedao = new MessageDAO();
     }
 }

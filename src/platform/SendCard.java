@@ -1,5 +1,6 @@
 package platform;
 
+import dao.MessageDAO;
 import dao.cardsendDAO;
 import dao.userDAO;
 
@@ -17,6 +18,7 @@ import java.util.*;
 public class SendCard extends HttpServlet {
     private dao.cardsendDAO cardsenddao;
     private dao.userDAO userdao;
+    private dao.MessageDAO msgdao;
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -25,24 +27,18 @@ public class SendCard extends HttpServlet {
         int receiveruid = Integer.parseInt(req.getParameter("receiveruid"));
         String cardname = req.getParameter("cardname");
         int sesid = Integer.parseInt(req.getSession().getAttribute("uid").toString());
+        RequestDispatcher rd = req.getRequestDispatcher("/portal/cards.jsp");
 
         if(userdao.isRegisteredUID(receiveruid)){
             cardsenddao.sendCard(sesid, cardname, receiveruid);
-        }
-
-
-
-        RequestDispatcher rd = req.getRequestDispatcher("/portal/datastore.jsp");
-
-
-
-        if(2> 1){
             req.setAttribute("headermsg","Success!");
             req.setAttribute("bodymsg","Data saved successfully!");
-
+            req.setAttribute("status","positive");
+            msgdao.newMsg("Card "+cardname+" has been shared with "+userdao.getName(receiveruid),(Integer) req.getSession().getAttribute("uid"),(Integer) req.getSession().getAttribute("uid"));
         }
+        else {req.setAttribute("status","negative");req.setAttribute("headermsg","Something went wrong"); req.setAttribute("bodymsg","Something went wrong. Please doublecheck the user ID."); rd = req.getRequestDispatcher("/portal/cards.jsp"); }
 
-        else { req.setAttribute("msg","Something went wrong."); rd = req.getRequestDispatcher("/portal/datastore.jsp"); }
+
 
         rd.forward(req, resp);
 
@@ -52,5 +48,6 @@ public class SendCard extends HttpServlet {
     public void init()  throws ServletException{
         cardsenddao = new cardsendDAO();
         userdao = new userDAO();
+        msgdao = new MessageDAO();
     }
 }

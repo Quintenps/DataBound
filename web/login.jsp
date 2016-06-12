@@ -89,12 +89,20 @@
         Log-in to your account
       </div>
       <%
-        Object msgs = request.getAttribute("msgs");
-        if (msgs != null) {
+        Object headermsg = request.getAttribute("headermsg");
+        Object bodymsg = request.getAttribute("bodymsg");
+        Object msgstatus = request.getAttribute("status");
 
-          String errormsg = "<div class='ui negative message'><i class='close icon'></i><div class='header'>Error</div><p>Incorrect username/password.</p></div>";
-          out.println(errormsg);
+        if (headermsg != null) {
+          out.println("<div class=\"ui "+msgstatus+" message\">\n" +
+                  "            <i class=\"close icon\"></i>\n" +
+                  "            <div class=\"header\">\n" +headermsg+
+                  "            </div>\n" +
+                  "            <p>"+bodymsg+"</p>\n" +
+                  "        </div>");
         }
+
+
       %>
     </h2>
     <form class="ui large form" method="post" action="LoginServlet.do">
