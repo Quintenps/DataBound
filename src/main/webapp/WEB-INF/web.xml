@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>guestfunctions.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/RegisterServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemoveAccess</servlet-name>
+        <servlet-class>platform.RemoveAccess</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RemoveAccess</servlet-name>
+        <url-pattern>/removeAccess.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Cards</servlet-name>
+        <servlet-class>platform.Cards</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Cards</servlet-name>
+        <url-pattern>/UpdateCard.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Settings</servlet-name>
+        <servlet-class>platform.Settings</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Settings</servlet-name>
+        <url-pattern>/UpdateSettings.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>guestfunctions.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuickSendCard</servlet-name>
+        <servlet-class>platform.SendCard</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QuickSendCard</servlet-name>
+        <url-pattern>/QuickSendCard.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>guestfunctions.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DataStore</servlet-name>
+        <servlet-class>platform.DataStore</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DataStore</servlet-name>
+        <url-pattern>/SubmitData.do</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>userSession</filter-name>
+        <filter-class>utils.userSession</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>userSession</filter-name>
+        <url-pattern>/portal/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+</web-app>
