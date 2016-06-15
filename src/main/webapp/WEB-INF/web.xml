@@ -15,6 +15,7 @@
         <url-pattern>/RegisterServlet.do</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>RemoveAccess</servlet-name>
         <servlet-class>platform.RemoveAccess</servlet-class>
@@ -99,4 +100,7 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+
 </web-app>
+
+

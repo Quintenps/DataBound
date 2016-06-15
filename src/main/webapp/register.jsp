@@ -26,15 +26,18 @@
   <link rel="stylesheet" type="text/css" href="dist/components/list.css">
   <link rel="stylesheet" type="text/css" href="dist/components/message.css">
   <link rel="stylesheet" type="text/css" href="dist/components/icon.css">
-
+  <link rel="stylesheet" type="text/css" href="dist/components/transition.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/modal.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/dimmer.css">
 
 
 
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+
   <script src="semantic.min.js"></script>
-
-
 
 
 
