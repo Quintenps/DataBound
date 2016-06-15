@@ -10,6 +10,6 @@ Exchange electronic cards securely when meeting new people at personal events, t
 ###Demo Account   
 
 >Username: Quinten  
->Password: 123123
->Demo URL: https://databound.quinten.co
->Backup URL: databound-quintenpeels.rhcloud.com	
+>Password: 123123   
+>Demo URL: https://databound.quinten.co   
+>Backup URL: databound-quintenpeels.rhcloud.com	   
