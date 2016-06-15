@@ -1,6 +1,7 @@
 package platform;
 
 import dao.MessageDAO;
+import dao.cardDAO;
 import dao.datastoreDAO;
 
 import javax.servlet.RequestDispatcher;
@@ -17,6 +18,7 @@ import java.util.*;
 public class DataStore extends HttpServlet {
     private dao.datastoreDAO datastoredao;
     private dao.MessageDAO messagedao;
+    private dao.cardDAO carddao;
 
     ArrayList<String> postedData = new ArrayList<>();
     HashMap<Integer, String> hmap = new HashMap<>();
@@ -114,6 +116,7 @@ public class DataStore extends HttpServlet {
 
         }
 
+        carddao.updateAllData(firstname, middlename, lastname, gender, dateofbirth, country, city, town, facebook, twitter, skype, emailbusiness, emailbusiness, website, (Integer) req.getSession().getAttribute("uid"));
         RequestDispatcher rd = req.getRequestDispatcher("/portal/datastore.jsp");
 
 
@@ -135,5 +138,6 @@ public class DataStore extends HttpServlet {
     public void init()  throws ServletException{
         datastoredao = new datastoreDAO();
         messagedao = new MessageDAO();
+        carddao = new cardDAO();
     }
 }

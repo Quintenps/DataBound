@@ -116,78 +116,78 @@
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"user icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
+                        "    <div class=\"content\"><h5> Name:</h5 >\n" +
                         "      "+carddata.get(1)+ " " +carddata.get(2)+ " " +carddata.get(3)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"heterosexual icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
+                        "    <div class=\"content\"><h5> Gender:</h5 >\n" +
                         "      "+carddata.get(4)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"birthday icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
+                        "    <div class=\"content\"><h5> Birthday:</h5 >\n" +
                         "      "+carddata.get(5)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"flag icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
+                        "    <div class=\"content\"><h5> Nationality:</h5 >\n" +
                         "      "+carddata.get(6)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"location arrow icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
-                        "      "+carddata.get(7)+", "+carddata.get(8)+", "+carddata.get(9)+"\n" +
+                        "    <div class=\"content\"><h5> Locations:</h5 >\n" +
+                        "      "+carddata.get(7)+", "+carddata.get(8)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"facebook icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
-                        "      "+carddata.get(10)+"\n" +
+                        "    <div class=\"content\"><h5> Facebook:</h5 >\n" +
+                        "      "+carddata.get(9)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"twitter icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
-                        "      "+carddata.get(11)+"\n" +
+                        "    <div class=\"content\"><h5> Twitter:</h5 >\n" +
+                        "      "+carddata.get(10)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"skype icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
-                        "      "+carddata.get(12)+"\n" +
+                        "    <div class=\"content\"><h5> Skype:</h5 >\n" +
+                        "      "+carddata.get(11)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
                         "    <i class=\"mail icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
+                        "    <div class=\"content\"><h5> Email personal:</h5 >\n" +
+                        "      "+carddata.get(12)+"\n" +
+                        "    </div>\n" +
+                        "  </div>\n" +
+
+                        "  <div class=\"item\">\n" +
+                        "    <i class=\"suitcase icon\"></i>\n" +
+                        "    <div class=\"content\"><h5> Email Business:</h5 >\n" +
                         "      "+carddata.get(13)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 
                         "  <div class=\"item\">\n" +
-                        "    <i class=\"suitcase icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
+                        "    <i class=\"cloud icon\"></i>\n" +
+                        "    <div class=\"content\"><h5> Website:</h5 >\n" +
                         "      "+carddata.get(14)+"\n" +
-                        "    </div>\n" +
-                        "  </div>\n" +
-
-                        "  <div class=\"item\">\n" +
-                        "    <i class=\"suitcase icon\"></i>\n" +
-                        "    <div class=\"content\">\n" +
-                        "      "+carddata.get(15)+"\n" +
                         "    </div>\n" +
                         "  </div>\n" +
 

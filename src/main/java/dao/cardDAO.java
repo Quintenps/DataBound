@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -346,6 +347,34 @@ public class cardDAO extends baseDAO {
         }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
     }
 
+    public void updateAllData(String fn, String mn, String ln, String gn, String dob, String cntr, String ct, String tw, String twit, String fb, String sk, String ep, String eb, String web, int sesid) {
+
+        try (Connection con = super.getConnection()) {
+
+                PreparedStatement statement = con.prepareStatement("UPDATE Cards set firstname=if(firstname IS NOT NULL,?, firstname), middlename=if(middlename IS NOT NULL,?, middlename), lastname=if(lastname IS NOT NULL,?, lastname), gender=if(gender IS NOT NULL,?, gender), dateofbirth=if(dateofbirth IS NOT NULL,?, dateofbirth), country=if(country IS NOT NULL,?, country), city=if(city IS NOT NULL,?, city), town=if(town IS NOT NULL,?, town), twitter=if(twitter IS NOT NULL,?, twitter), facebook=if(facebook IS NOT NULL,?, facebook), skype=if(skype IS NOT NULL,?, skype), emailpersonal=if(emailpersonal IS NOT NULL,?, emailpersonal), emailbusiness=if(emailbusiness IS NOT NULL,?, emailbusiness), website=if(website IS NOT NULL,?, website) WHERE userid=?");
+                statement.setString(1, fn);
+                statement.setString(2, mn);
+                statement.setString(3, ln);
+                statement.setString(4, gn);
+                statement.setString(5, dob);
+                statement.setString(6, cntr);
+                statement.setString(7, ct);
+                statement.setString(8, tw);
+                statement.setString(9, twit);
+                statement.setString(10, fb);
+                statement.setString(11, sk);
+                statement.setString(12, ep);
+                statement.setString(13, eb);
+                statement.setString(14, web);
+                statement.setInt(15, sesid);
+                statement.executeUpdate();
+
+
+
+
+        }catch (SQLException | NullPointerException e) { e.printStackTrace(); }
+    }
+
 
     public HashMap<Integer, String> selectAllData(User user, String cn) {
         HashMap<Integer, String> datafields = new HashMap();
@@ -427,6 +456,50 @@ public class cardDAO extends baseDAO {
                 String emailbusiness = sqlresult.getString("emailbusiness");
                 String website = sqlresult.getString("website");
 
+                if(firstname == null){
+                    firstname = "";
+                }
+                if(middlename == null){
+                    middlename = "";
+                }
+                if(lastname == null){
+                    lastname = "";
+                }
+                if(gender == null){
+                    gender = "";
+                }
+                if(dateofbirth == null){
+                    dateofbirth = "";
+                }
+                if(country == null){
+                    country = "";
+                }
+                if(city == null){
+                    city = "";
+                }
+                if(town == null){
+                    town = "";
+                }
+                if(facebook == null){
+                    facebook = "";
+                }
+                if(twitter == null){
+                    twitter = "";
+                }
+                if(skype == null){
+                    skype = "";
+                }
+                if(emailpersonal == null){
+                    emailpersonal = "";
+                }
+                if(emailbusiness == null){
+                    emailbusiness = "";
+                }
+                if(website == null){
+                    website = "";
+                }
+
+
                 datafields.put(1, firstname);
                 datafields.put(2, middlename);
                 datafields.put(3, lastname);
@@ -441,6 +514,7 @@ public class cardDAO extends baseDAO {
                 datafields.put(12, emailpersonal);
                 datafields.put(13, emailbusiness);
                 datafields.put(14, website);
+
             }
 
         }catch (SQLException sqle) { sqle.printStackTrace(); }
